@@ -53,7 +53,6 @@ const ApplicationForm = () => {
             showLabel={false}
             id="firstName"
             name="personalInformation.firstName"
-            errorClass="hidden"
             value={values.personalInformation.firstName.show ? "" : ""}
             onBlur={handleBlur}
             onChange={handleChange}
@@ -68,12 +67,14 @@ const ApplicationForm = () => {
             labelClassName="text-lg font-semibold text-black"
             showLabel={false}
             id="lastName"
-            name="lastName"
-            errorClass="hidden"
-            value=""
-            onBlur={() => {}}
-            onChange={() => {}}
-            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
+            name="personalInformation.lastName"
+            value={values.personalInformation.lastName.show ? "" : ""}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            disabled={values.personalInformation.lastName.show}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
+              errors.personalInformation?.lastName ? "!border-red-600" : ""
+            }`}
           />
           <CustomizeInput
             htmlFor="emailId"
