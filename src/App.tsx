@@ -12,7 +12,7 @@ const App = () => {
           {tabLinks.map((item) => (
             <li
               key={item}
-              className={`w-full h-full flex items-center justify-center relative transition-all duration-300`}
+              className={`w-full h-full flex items-center justify-center relative transition-all duration-300 font-Inter text-xl font-medium`}
             >
               {item}
             </li>
