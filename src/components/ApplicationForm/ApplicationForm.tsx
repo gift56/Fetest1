@@ -4,6 +4,7 @@ import CustomizeInput from "../formInputs/CustomizeInput";
 import validationSchema from "../../schema";
 import FormValue from "../../hooks/type";
 import { generalInitialValues } from "./generalInitialValues";
+import { emptyQuestion } from "../../utils/constant";
 
 const ApplicationForm = () => {
   const initialValues = generalInitialValues;
@@ -36,6 +37,13 @@ const ApplicationForm = () => {
     }
     setFieldValue("coverImage", file);
   }
+
+  const addCustomisedQuestion = () => {
+    setFieldValue("customizedQuestions", [
+      ...values.customisedQuestions,
+      emptyQuestion,
+    ]);
+  };
 
   return (
     <form
