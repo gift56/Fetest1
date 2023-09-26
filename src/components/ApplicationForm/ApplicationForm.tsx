@@ -14,16 +14,19 @@ const ApplicationForm = () => {
     actions.resetForm();
   };
 
-  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
-    useFormik({
-      initialValues,
-      validationSchema: validationSchema,
-      onSubmit,
-    });
+  const {
+    values,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    errors,
+    setFieldValue,
+  } = useFormik({
+    initialValues,
+    validationSchema: validationSchema,
+    onSubmit,
+  });
 
-  const getError = (key: keyof FormValue) => {
-    return touched[key] && errors[key];
-  };
   return (
     <form
       onSubmit={handleSubmit}
@@ -199,7 +202,9 @@ const ApplicationForm = () => {
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={values.personalInformation.currentResidence.show}
+                    defaultChecked={
+                      values.personalInformation.currentResidence.show
+                    }
                     onChange={handleChange}
                     name="currentResidence"
                   />
