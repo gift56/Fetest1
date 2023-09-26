@@ -45,6 +45,13 @@ const ApplicationForm = () => {
     ]);
   };
 
+  const removeCustomisedQuestion = (indexToRemove: number) => {
+    const updatedQuestions = values.customisedQuestions.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setFieldValue("customisedQuestions", updatedQuestions);
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
