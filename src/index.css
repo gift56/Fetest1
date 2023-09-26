@@ -5,3 +5,8 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
