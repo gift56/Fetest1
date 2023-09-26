@@ -103,7 +103,8 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="phoneNumber"
+                  name="personalInformation.phoneNumber.internalUse"
+                  onChange={handleChange}
                   id="phoneNumber"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
@@ -119,9 +120,10 @@ const ApplicationForm = () => {
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
-                    name="phoneNumber"
+                    defaultChecked={values.personalInformation.phoneNumber.show}
+                    onChange={handleChange}
+                    name="personalInformation.phoneNumber.show"
+                    id="phoneNumber"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
