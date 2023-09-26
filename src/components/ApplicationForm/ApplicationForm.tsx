@@ -438,9 +438,9 @@ const ApplicationForm = () => {
       </Card>
       <div
         className={`${
-          values.customisedQuestions.length > 0
-            ? "scale-0 opacity-0"
-            : "scale-1 opacity-100"
+          values.personalInformation.personalQuestions.length === 0
+            ? "scale-0 opacity-0 absolute"
+            : "scale-1 opacity-100 relative"
         } transition-all duration-300`}
       >
         <Card headline="Question">
@@ -498,7 +498,6 @@ const ApplicationForm = () => {
                     text="Save"
                     onClick={() => {
                       addCustomisedQuestion(item);
-                      removePersonalQuestion(index);
                     }}
                     className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
                   />
