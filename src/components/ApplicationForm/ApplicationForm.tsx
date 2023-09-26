@@ -18,7 +18,9 @@ const ApplicationForm = () => {
         </label>
       </Card>
       <Card headline="Personal Information">
-        
+        <div className="flex flex-col items-start justify-start w-full gap-3">
+
+        </div>
       </Card>
     </form>
   );
