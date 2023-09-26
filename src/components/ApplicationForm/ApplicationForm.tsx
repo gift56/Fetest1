@@ -453,7 +453,7 @@ const ApplicationForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name={`item[${index}].type`}
-                className="bg-white appearance-none bg-[/public/icon/dropdownIcon.png] bg-no-repeat bg-[center_right_0.3rem] lg:bg-[center_right_1.2rem] border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
               >
                 {questionType.map((item) => (
                   <option id="type" value={item.value} key={item.text}>
