@@ -642,9 +642,10 @@ const ApplicationForm = () => {
                         alt="plusIcon"
                         className="w-3 h-3 cursor-pointer"
                         onClick={() => {
+                          const currentChoices = item.choices || [];
                           setFieldValue(
                             `profile.profileQuestions[${index}].choices`,
-                            ""
+                            [...currentChoices, ""]
                           );
                         }}
                       />
