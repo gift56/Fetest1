@@ -11,9 +11,9 @@ img {
   -webkit-user-drag: none;
 }
 
-.label .action input:checked ~ i {
+label .action input:checked ~ i {
   background-color: #087B2F;
 }
-.label .action input:checked ~ i::before {
+label .action input:checked ~ i::before {
   left: calc(100% - 24px);
 }
