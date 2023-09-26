@@ -12,7 +12,9 @@ const App = () => {
           {tabLinks.map((item) => (
             <li
               key={item}
-              className={`w-full h-full flex items-center justify-center relative transition-all duration-300 font-Inter text-lg font-medium cursor-pointer before:content-[''] before:absolute before:w-[2px] before:h-[50%] before:bg-[#C4C4C4]`}
+              className={`w-full h-full flex items-center justify-center relative transition-all duration-300 font-Inter text-lg font-medium cursor-pointer first:before:hidden before:content-[''] before:absolute before:w-[2px] before:h-[50%] before:bg-[#C4C4C4] before:right-0 ${
+                tab === item ? "bg-tabColor text-white before:bg-tabColor" : ""
+              } `}
             >
               {item}
             </li>
