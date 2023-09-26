@@ -7,7 +7,6 @@ import { generalInitialValues } from "./generalInitialValues";
 import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
-import { profile } from "console";
 
 const ApplicationForm = () => {
   const initialValues = generalInitialValues;
@@ -47,7 +46,7 @@ const ApplicationForm = () => {
       emptyQuestion,
     ]);
   };
-  const removePersonalQuestion = (indexToRemove: number) => {
+  const removeProfileQuestion = (indexToRemove: number) => {
     const updatedQuestions = values.profile.profileQuestions.filter(
       (_, index) => index !== indexToRemove
     );
@@ -617,9 +616,40 @@ const ApplicationForm = () => {
                   >
                     Choice
                   </label>
-                  <div className="flex items-center justify-between w-full gap-3">
-                    <img src="/icon/listIcon.png" alt="listIcon" className="w-6 h-6"/>
-                  </div>
+
+                  {item.choices?.map((choice, choiceIndex) => (
+                    <div
+                      key={choiceIndex}
+                      className="flex items-center justify-between w-full gap-3"
+                    >
+                      <img
+                        src="/icon/listIcon.png"
+                        alt="listIcon"
+                        className="w-6 h-6"
+                      />
+                      <CustomizeInput
+                        showLabel={true}
+                        type="text"
+                        name={`profile.profileQuestions[${index}].choices[${choiceIndex}]`}
+                        value={choice}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Type here"
+                        className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                      />
+                      <img
+                        src="/icon/plusIcon.png"
+                        alt="plusIcon"
+                        className="w-3 h-3 cursor-pointer"
+                        onClick={() => {
+                          setFieldValue(
+                            `profile.profileQuestions[${index}].choices`,
+                            ""
+                          );
+                        }}
+                      />
+                    </div>
+                  ))}
                 </div>
 
                 <div className="w-full flex items-center justify-between gap-4">
