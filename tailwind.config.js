@@ -14,6 +14,7 @@ module.exports = {
         tabColor: "#00635B",
       },
       boxShadow: {
+        sideShad: "0px 4px 23px 0px rgba(0, 0, 0, 0.05)",
         cardShad: "3px 3px 14px 0px rgba(190, 190, 190, 0.30)",
       },
     },
