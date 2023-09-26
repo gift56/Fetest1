@@ -77,16 +77,21 @@ const ApplicationForm = () => {
                 alt={values.coverImage?.name}
                 className="w-full h-[300px] object-cover"
               />
-              <label
-                htmlFor="coverImage"
-                className="flex items-center justify-center gap-5 text-sm font-semibold text-danger cursor-pointer px-4"
-              >
+              <div className="flex items-center justify-center gap-3 text-sm font-semibold text-danger cursor-pointer px-4">
                 <img
                   src="/icon/closeIcon.png"
                   alt="closeIcon"
                   className="w-6 h-6"
                 />
-                <span>Delete & re-upload</span>
+                <div className="flex items-center gap-2">
+                  <span onClick={() => setFieldValue("coverImage", null)}>
+                    Delete{" "}
+                  </span>{" "}
+                  &
+                  <label htmlFor="coverImage" className="text-success">
+                    re-upload
+                  </label>
+                </div>
                 <input
                   type="file"
                   name="coverImage"
@@ -96,7 +101,7 @@ const ApplicationForm = () => {
                   id="coverImage"
                   className="hidden"
                 />
-              </label>
+              </div>
             </div>
           )}
         </>
