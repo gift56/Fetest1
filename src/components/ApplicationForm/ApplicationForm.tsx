@@ -475,6 +475,19 @@ const ApplicationForm = () => {
                 placeholder="Type here"
                 className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
               />
+              <div className="w-full flex items-center justify-between gap-4">
+                <span
+                  onClick={() => setFieldValue("coverImage", null)}
+                  className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
+                >
+                  <img
+                    src="/icon/closeIcon.png"
+                    alt="closeIcon"
+                    className="w-6 h-6"
+                  />{" "}
+                  Delete question
+                </span>
+              </div>
             </div>
           ))}
         </div>
