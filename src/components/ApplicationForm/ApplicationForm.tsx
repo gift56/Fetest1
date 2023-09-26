@@ -538,7 +538,10 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-start gap-3 cursor-pointer">
+          <div
+            onClick={addCustomisedQuestion}
+            className="flex items-center justify-start gap-3 cursor-pointer"
+          >
             <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
             <span className="text-sm font-semibold text-black">
               Add a question
@@ -547,14 +550,10 @@ const ApplicationForm = () => {
         </div>
       </Card>
       {values.customisedQuestions.length > 0 && (
-        <Card
-          headline={`${
-            values.customisedQuestions.length > 0
-              ? "Additional questions"
-              : "Questions"
-          }`}
-        >
-          <div className="flex flex-col items-start justify-start w-full gap-3"></div>
+        <Card headline="Additional question">
+          {values.customisedQuestions.map((question, index) => (
+            <div key={index}></div>
+          ))}
         </Card>
       )}
     </form>
