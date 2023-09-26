@@ -54,11 +54,11 @@ const ApplicationForm = () => {
             id="firstName"
             name="personalInformation.firstName"
             errorClass="hidden"
-            value={values.personalInformation.firstName}
+            value={values.personalInformation.firstName.show}
             onBlur={handleBlur}
             onChange={handleChange}
             disabled={values.personalInformation.firstName.show}
-            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all ${
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
               errors.personalInformation?.firstName ? "!border-red-600" : ""
             }`}
           />
