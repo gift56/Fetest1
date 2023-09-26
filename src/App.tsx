@@ -6,8 +6,8 @@ const App = () => {
 
   return (
     <MainLayout>
-      <div className="w-full flex flex-col items-start justify-start">
-        <div className="w-full"></div>
+      <div className="w-full flex flex-col items-start justify-start h-screen overflow-y-auto overflow-x-hidden">
+        <div className="w-full h-[129px] shadow-tabShad"></div>
       </div>
     </MainLayout>
   );
