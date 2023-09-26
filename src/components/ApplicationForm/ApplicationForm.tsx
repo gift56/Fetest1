@@ -71,11 +71,11 @@ const ApplicationForm = () => {
               />
             </label>
           ) : (
-            <div className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2">
+            <div className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad overflow-hidden h-[400px] my-2">
               <img
                 src={URL.createObjectURL(values?.coverImage)}
                 alt={values.coverImage?.name}
-                className="w-full h-[280px]"
+                className="w-full h-[300px] object-cover"
               />
               <label
                 htmlFor="coverImage"
