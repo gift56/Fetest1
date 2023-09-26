@@ -73,6 +73,203 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="phoneNumber"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="phoneNumber"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="nationality"
+              className="text-lg font-semibold text-black"
+            >
+              Nationality
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="nationality"
+                  id="nationality"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="nationality"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="nationality"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="currentResidence"
+              className="text-lg font-semibold text-black"
+            >
+              Current Residence
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="currentResidence"
+                  id="currentResidence"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="currentResidence"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="currentResidence"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="phoneNumber"
+              className="text-lg font-semibold text-black"
+            >
+              ID Number
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="internal"
+                  id="internal"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="internal"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="hide"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="phoneNumber"
+              className="text-lg font-semibold text-black"
+            >
+              Phone{" "}
+              <span className="text-sm font-normal">(without dial code)</span>
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="internal"
+                  id="internal"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="internal"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="hide"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="phoneNumber"
+              className="text-lg font-semibold text-black"
+            >
+              Phone{" "}
+              <span className="text-sm font-normal">(without dial code)</span>
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
                   name="internal"
                   id="internal"
                   className="accent-success rounded cursor-pointer w-4 h-4"
