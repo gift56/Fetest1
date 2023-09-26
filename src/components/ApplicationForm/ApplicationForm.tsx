@@ -436,67 +436,78 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      <Card headline="Question">
-        <div className="w-full">
-          {values.personalInformation.personalQuestions.map((item, index) => (
-            <div key={index} className="w-full flex flex-col items-start gap-5">
-              <CustomizeSelect
-                showLabel={false}
-                label="Type"
-                htmlFor="type"
-                labelClassName="text-sm font-medium text-black"
-                value={item.type}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                name={`personalInformation.personalQuestions[${index}].type`}
-                className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+      <div
+        className={`${
+          values.customisedQuestions.length > 0
+            ? "scale-0 opacity-0"
+            : "scale-1 opacity-100"
+        } transition-all duration-300`}
+      >
+        <Card headline="Question">
+          <div className="w-full">
+            {values.personalInformation.personalQuestions.map((item, index) => (
+              <div
+                key={index}
+                className="w-full flex flex-col items-start gap-5"
               >
-                {questionType.map((item) => (
-                  <option id="type" value={item.value} key={item.text}>
-                    {item.text}
-                  </option>
-                ))}
-              </CustomizeSelect>
-              <CustomizeInput
-                showLabel={false}
-                label="Question"
-                htmlFor="question"
-                labelClassName="text-sm font-normal"
-                type="text"
-                name={`personalInformation.personalQuestions[${index}].question`}
-                value={item.question}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                id="question"
-                placeholder="Type here"
-                className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
-              />
-              <div className="w-full flex items-center justify-between gap-4">
-                <span
-                  onClick={() => removePersonalQuestion(index)}
-                  className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
+                <CustomizeSelect
+                  showLabel={false}
+                  label="Type"
+                  htmlFor="type"
+                  labelClassName="text-sm font-medium text-black"
+                  value={item.type}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  name={`personalInformation.personalQuestions[${index}].type`}
+                  className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 >
-                  <img
-                    src="/icon/closeIcon.png"
-                    alt="closeIcon"
-                    className="w-6 h-6"
-                  />{" "}
-                  <span>Delete question</span>
-                </span>
-                <CustomizeButton
-                  type="button"
-                  text="Save"
-                  onClick={() => {
-                    addCustomisedQuestion(item);
-                    removePersonalQuestion(index);
-                  }}
-                  className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
+                  {questionType.map((item) => (
+                    <option id="type" value={item.value} key={item.text}>
+                      {item.text}
+                    </option>
+                  ))}
+                </CustomizeSelect>
+                <CustomizeInput
+                  showLabel={false}
+                  label="Question"
+                  htmlFor="question"
+                  labelClassName="text-sm font-normal"
+                  type="text"
+                  name={`personalInformation.personalQuestions[${index}].question`}
+                  value={item.question}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="question"
+                  placeholder="Type here"
+                  className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 />
+                <div className="w-full flex items-center justify-between gap-4">
+                  <span
+                    onClick={() => removePersonalQuestion(index)}
+                    className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
+                  >
+                    <img
+                      src="/icon/closeIcon.png"
+                      alt="closeIcon"
+                      className="w-6 h-6"
+                    />{" "}
+                    <span>Delete question</span>
+                  </span>
+                  <CustomizeButton
+                    type="button"
+                    text="Save"
+                    onClick={() => {
+                      addCustomisedQuestion(item);
+                      removePersonalQuestion(index);
+                    }}
+                    className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </Card>
+            ))}
+          </div>
+        </Card>
+      </div>
       <Card headline="Profile">
         <div className="flex flex-col items-start justify-start w-full gap-3">
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
