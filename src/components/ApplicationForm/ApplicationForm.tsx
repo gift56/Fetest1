@@ -429,8 +429,8 @@ const ApplicationForm = () => {
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
+                    defaultChecked={values.profile.education.show}
+                    onChange={handleChange}
                     name="education"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
