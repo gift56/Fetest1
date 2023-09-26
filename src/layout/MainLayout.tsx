@@ -11,7 +11,7 @@ const MainLayout = ({ children }: ChildrenProp) => {
       <nav aria-label="sidebar" className="flex-shrink">
         <Sidebar />
       </nav>
-      <section className="flex-grow py-20">{children}</section>
+      <section className="flex-grow">{children}</section>
     </main>
   );
 };
