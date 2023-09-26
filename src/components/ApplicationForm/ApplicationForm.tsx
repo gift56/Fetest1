@@ -11,6 +11,7 @@ const ApplicationForm = () => {
             alt="uploadIcon"
             className="w-8 h-8"
           />
+          <h3 className="text-sm fontsemibold text-black">Upload cover image</h3>
         </label>
       </Card>
     </form>
