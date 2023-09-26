@@ -26,7 +26,7 @@ const ApplicationForm = () => {
             htmlFor="firstName"
             label="First Name"
             labelClassName="text-lg font-semibold text-black"
-            showLabel={true}
+            showLabel={false}
             id="firstName"
             name="firstName"
             errorClass="hidden"
