@@ -222,7 +222,7 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="idNumber"
+                  name="personalInformation.idNumber.internalUse"
                   id="idNumber"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
