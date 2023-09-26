@@ -29,6 +29,11 @@ const ApplicationForm = () => {
             showLabel={true}
             id="firstName"
             name="firstName"
+            errorClass="hidden"
+            value=""
+            onBlur={() => {}}
+            onChange={() => {}}
+            className="w-full border-b border-[#C4C4C4]"
           />
         </div>
       </Card>

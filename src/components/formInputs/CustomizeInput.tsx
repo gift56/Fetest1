@@ -45,7 +45,7 @@ const CustomizeInput = ({
       <div className={`flex flex-col gap-1 w-full h-full ${inputClassName}`}>
         <input
           {...props}
-          className={`${className} ${error ? "border !border-red-400" : ""}`}
+          className={`${className} ${error ? "border !border-red-400" : ""} outline-none text-sm font-medium md:text-base`}
           id={id}
           onBlur={onBlur}
           onChange={onChange}
