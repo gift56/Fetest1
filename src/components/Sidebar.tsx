@@ -5,6 +5,14 @@ const Sidebar = () => {
       <div className="cursor-pointer">
         <img src="/icon/barIcon.png" alt="barIcon" className="w-full" />
       </div>
+      <nav
+        aria-label="navigate"
+        className="flex w-full flex-col items-center gap-6"
+      >
+        {sideBardIcon.map((item, i) => (
+          <img src={item} alt="barIcon" className="w-full" key={i} />
+        ))}
+      </nav>
     </ul>
   );
 };
