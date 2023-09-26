@@ -175,7 +175,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="currentResidence"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Current Residence
             </label>
@@ -183,13 +183,13 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="currentResidence"
+                  name="personalInformation.currentResidence.internalUse"
                   id="currentResidence"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
                   htmlFor="currentResidence"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
                 >
                   Internal
                 </label>
@@ -199,8 +199,8 @@ const ApplicationForm = () => {
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
+                    defaultChecked={values.personalInformation.currentResidence.show}
+                    onChange={handleChange}
                     name="currentResidence"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
