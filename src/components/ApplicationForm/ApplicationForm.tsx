@@ -655,16 +655,26 @@ const ApplicationForm = () => {
                     <div className="flex items-center justify-start gap-2">
                       <input
                         type="checkbox"
-                        name={`profile.profileQuestions[${index}].other`}
-                        id="other"
+                        name={`${
+                          item.type === "Dropdown"
+                            ? `profile.profileQuestions[${index}].other`
+                            : `profile.profileQuestions[${index}].disqualify`
+                        }`}
+                        id={`${
+                          item.type === "Dropdown" ? "other" : "disqualify"
+                        }`}
                         onChange={handleChange}
                         className="accent-success rounded cursor-pointer w-4 h-4"
                       />
                       <label
-                        htmlFor="other"
+                        htmlFor={`${
+                          item.type === "Dropdown" ? "other" : "disqualify"
+                        }`}
                         className="text-sm font-normal text-black select-none cursor-pointer"
                       >
-                        Enable “Other” option
+                        {item.type === "Dropdown"
+                          ? "Enable “Other” option"
+                          : "Disqualify candidate if the answer is no"}
                       </label>
                     </div>
                   </div>
