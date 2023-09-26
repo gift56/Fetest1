@@ -11,7 +11,7 @@ const Card = ({ headline, children }: CardProp) => {
       <div className="bg-primary py-3 px-4 w-full">
         <h2 className="text-base md:text-lg font-semibold">{headline}</h2>
       </div>
-      <div className="w-full bg-white p-3">{children}</div>
+      <div className="w-full bg-white p-5">{children}</div>
     </div>
   );
 };

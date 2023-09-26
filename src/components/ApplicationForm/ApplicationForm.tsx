@@ -5,7 +5,7 @@ const ApplicationForm = () => {
   return (
     <form className="w-full flex flex-col p-5 md:p-10 gap-6">
       <Card headline="Upload cover image">
-        <div></div>
+        <div className="w-full border-dashed"></div>
       </Card>
     </form>
   );
