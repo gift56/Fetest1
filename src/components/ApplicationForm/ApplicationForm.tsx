@@ -1,8 +1,24 @@
-import { useFormik } from 'formik';
+import { useFormik } from "formik";
 import Card from "../card/Card";
 import CustomizeInput from "../formInputs/CustomizeInput";
+import validationSchema from "../../schema";
+import FormValue from "../../hooks/type";
+import { generalInitialValues } from "./generalInitialValues";
 
 const ApplicationForm = () => {
+  const initialValues = generalInitialValues;
+
+  const onSubmit = async (payload: FormValue, actions: any) => {
+    console.log(payload);
+    await new Promise((res) => setTimeout(res, 1000));
+    actions.resetForm();
+  };
+
+  const {} = useFormik({
+    initialValues,
+    validationSchema: validationSchema,
+    onSubmit,
+  });
   return (
     <form className="w-full flex flex-col p-5 md:p-10 gap-6">
       <Card headline="Upload cover image">
@@ -433,9 +449,7 @@ const ApplicationForm = () => {
         </div>
       </Card>
       <Card headline="Additional questions">
-        <div className="flex flex-col items-start justify-start w-full gap-3">
-          
-        </div>
+        <div className="flex flex-col items-start justify-start w-full gap-3"></div>
       </Card>
     </form>
   );
