@@ -7,6 +7,7 @@ import { generalInitialValues } from "./generalInitialValues";
 import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
+import { profile } from "console";
 
 const ApplicationForm = () => {
   const initialValues = generalInitialValues;
@@ -66,6 +67,8 @@ const ApplicationForm = () => {
     );
     setFieldValue("customisedQuestions", updatedQuestions);
   };
+
+  console.log(values.profile.profileQuestions);
 
   return (
     <form
@@ -583,7 +586,7 @@ const ApplicationForm = () => {
                   value={item.type}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  name={`personalInformation.personalQuestions[${index}].type`}
+                  name={`profile.profileQuestions[${index}].type`}
                   className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 >
                   {questionType.map((item) => (
@@ -598,7 +601,7 @@ const ApplicationForm = () => {
                   htmlFor="question"
                   labelClassName="text-sm font-normal"
                   type="text"
-                  name={`personalInformation.personalQuestions[${index}].question`}
+                  name={`profile.profileQuestions[${index}].question`}
                   value={item.question}
                   onChange={handleChange}
                   onBlur={handleBlur}
