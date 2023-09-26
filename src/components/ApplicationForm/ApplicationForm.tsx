@@ -77,9 +77,21 @@ const ApplicationForm = () => {
                 alt={values.coverImage?.name}
                 className="w-full h-[280px]"
               />
-              <label className="flex items-center justify-center gap-5 text-sm font-semibold cursor-pointer">
+              <label
+                htmlFor="coverImage"
+                className="flex items-center justify-center gap-5 text-sm font-semibold text-danger cursor-pointer"
+              >
                 <img src="/icon/closeIcon.png" alt="closeIcon" />
                 <span>Delete & re-upload</span>
+                <input
+                  type="file"
+                  name="coverImage"
+                  onChange={handleImageChange}
+                  onBlur={handleBlur}
+                  accept="image/*"
+                  id="coverImage"
+                  className="hidden"
+                />
               </label>
             </div>
           )}
