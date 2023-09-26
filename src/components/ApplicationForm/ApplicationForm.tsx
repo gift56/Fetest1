@@ -441,9 +441,9 @@ const ApplicationForm = () => {
         </div>
       </Card>
       <Card headline="Question">
-        <div className="flex flex-col items-start justify-start w-full gap-3">
+        <div className="w-full">
           {values.personalInformation.personalQuestions.map((item, index) => (
-            <div key={index} className="w-full">
+            <div key={index} className="w-full flex flex-col items-start gap-5">
               <CustomizeSelect
                 showLabel={false}
                 label="Type"
