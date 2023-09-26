@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useFormik } from 'formik';
 import Card from "../card/Card";
 import CustomizeInput from "../formInputs/CustomizeInput";
 
@@ -430,6 +430,11 @@ const ApplicationForm = () => {
               Add a question
             </span>
           </div>
+        </div>
+      </Card>
+      <Card headline="Profile">
+        <div className="flex flex-col items-start justify-start w-full gap-3">
+          
         </div>
       </Card>
     </form>
