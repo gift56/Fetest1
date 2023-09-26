@@ -81,7 +81,11 @@ const ApplicationForm = () => {
                 htmlFor="coverImage"
                 className="flex items-center justify-center gap-5 text-sm font-semibold text-danger cursor-pointer"
               >
-                <img src="/icon/closeIcon.png" alt="closeIcon" />
+                <img
+                  src="/icon/closeIcon.png"
+                  alt="closeIcon"
+                  className="w-6 h-6"
+                />
                 <span>Delete & re-upload</span>
                 <input
                   type="file"
