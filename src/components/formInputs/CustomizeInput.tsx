@@ -33,6 +33,7 @@ const CustomizeInput = ({
   containerClass,
   defaultChecked,
   value,
+  disabled,
   ...props
 }: CustomizeInputProps) => {
   return (
@@ -45,13 +46,16 @@ const CustomizeInput = ({
       <div className={`flex flex-col gap-1 w-full h-full ${inputClassName}`}>
         <input
           {...props}
-          className={`${className} ${error ? "border !border-red-400" : ""} outline-none text-sm font-medium md:text-base`}
+          className={`${className} ${
+            error ? "border !border-red-400" : ""
+          } outline-none text-sm font-medium md:text-base`}
           id={id}
           onBlur={onBlur}
           onChange={onChange}
           accept={accept}
           value={value}
           checked={defaultChecked}
+          disabled={disabled}
         />
         {error && (
           <p className={`text-xs text-red-600 ${errorClass}`}>{error}</p>

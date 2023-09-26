@@ -57,6 +57,7 @@ const ApplicationForm = () => {
             value={values.personalInformation.firstName}
             onBlur={handleBlur}
             onChange={handleChange}
+            disabled={values.personalInformation.firstName}
             className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all ${
               errors.personalInformation?.firstName ? "!border-red-600" : ""
             }`}
