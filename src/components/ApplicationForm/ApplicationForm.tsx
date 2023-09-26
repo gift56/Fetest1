@@ -70,6 +70,8 @@ const ApplicationForm = () => {
     setFieldValue("customisedQuestions", updatedQuestions);
   };
 
+  console.log(values.customisedQuestions);
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -497,6 +499,7 @@ const ApplicationForm = () => {
                     type="button"
                     text="Save"
                     onClick={() => {
+                      addPersonalQuestion(item);
                       addCustomisedQuestion(item);
                     }}
                     className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
