@@ -71,9 +71,34 @@ const ApplicationForm = () => {
             </label>
             <div className="flex items-center justify-end gap-4">
               <div className="flex items-center justify-start gap-2">
-                <input type="checkbox" name="internal" id="internal" className="accent-success rounded cursor-pointer" />
-                <label htmlFor="internal" className="text-sm font-normal text-black cursor-pointer">Internal</label>
+                <input
+                  type="checkbox"
+                  name="internal"
+                  id="internal"
+                  className="accent-success rounded cursor-pointer"
+                />
+                <label
+                  htmlFor="internal"
+                  className="text-sm font-normal text-black cursor-pointer"
+                >
+                  Internal
+                </label>
               </div>
+              <label className="flex items-center gap-5 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={false}
+                    // onChange={handleChange}
+                    name="hide"
+                  />
+                  <i className="bg-[#F1F5F9] relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[2px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
             </div>
           </div>
         </div>
