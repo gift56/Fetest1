@@ -16,3 +16,11 @@ export const tabLinks = [
   "Workflow",
   "Preview",
 ];
+
+export const emptyQuestion = {
+  type: "",
+  question: "",
+  choices: [""],
+  maxChoice: 0,
+  disqualify: true,
+};
