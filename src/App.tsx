@@ -7,7 +7,9 @@ const App = () => {
   return (
     <MainLayout>
       <div className="w-full flex flex-col items-start justify-start h-screen  py-20 overflow-y-auto overflow-x-hidden">
-        <div className="w-full h-[129px] shadow-tabShad">sjsj</div>
+        <div className="w-full h-[129px] shadow-tabShad flex items-center justify-start">
+          
+        </div>
       </div>
     </MainLayout>
   );
