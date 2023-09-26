@@ -8,8 +8,10 @@ interface ChildrenProp {
 const MainLayout = ({ children }: ChildrenProp) => {
   return (
     <main className="w-full h-screen flex items-start justify-start bg-white">
-      <Sidebar />
-      {children}
+      <nav aria-label="sidebar">
+        <Sidebar />
+      </nav>
+      <section>{children}</section>
     </main>
   );
 };
