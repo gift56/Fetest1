@@ -94,7 +94,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="phoneNumber"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Phone{" "}
               <span className="text-sm font-normal">(without dial code)</span>
@@ -110,7 +110,7 @@ const ApplicationForm = () => {
                 />
                 <label
                   htmlFor="phoneNumber"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
                 >
                   Internal
                 </label>
@@ -127,7 +127,7 @@ const ApplicationForm = () => {
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
-                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer select-none">
                   Hide
                 </span>
               </label>
@@ -136,7 +136,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="nationality"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Nationality
             </label>
@@ -150,7 +150,7 @@ const ApplicationForm = () => {
                 />
                 <label
                   htmlFor="nationality"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
                 >
                   Internal
                 </label>
