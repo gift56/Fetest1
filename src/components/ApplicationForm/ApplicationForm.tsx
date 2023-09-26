@@ -11,7 +11,10 @@ const ApplicationForm = () => {
             alt="uploadIcon"
             className="w-8 h-8"
           />
-          <h3 className="text-sm fontsemibold text-black">Upload cover image</h3>
+          <h3 className="text-sm font-semibold text-black">
+            Upload cover image
+          </h3>
+          <p className="text-sm font-medium text-basegray">16:9 ratio is recommended. Max image size 1mb</p>
         </label>
       </Card>
     </form>
