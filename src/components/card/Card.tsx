@@ -6,7 +6,11 @@ interface CardProp {
 }
 
 const Card = ({ headline, content }: CardProp) => {
-  return <div className="w-full lg:w-[595px] h-fit shadow-cardShad rounded-[20px]">Card</div>;
+  return (
+    <div className="w-full lg:w-[595px] h-fit shadow-cardShad rounded-[20px] flex flex-col items-start justify-start">
+      <h2 className="text-base md:text-lg"></h2>
+    </div>
+  );
 };
 
 export default Card;
