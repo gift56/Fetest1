@@ -6,6 +6,7 @@ import FormValue from "../../hooks/type";
 import { generalInitialValues } from "./generalInitialValues";
 import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
+import CustomizeButton from "../CustomizeButton";
 
 const ApplicationForm = () => {
   const initialValues = generalInitialValues;
@@ -60,11 +61,8 @@ const ApplicationForm = () => {
     ]);
   };
 
-  const addCustomisedQuestion = () => {
-    setFieldValue("customizedQuestions", [
-      ...values.customisedQuestions,
-      emptyQuestion,
-    ]);
+  const addCustomisedQuestion = (item: any) => {
+    setFieldValue("customizedQuestions", [...values.customisedQuestions, item]);
   };
 
   const removeCustomisedQuestion = (indexToRemove: number) => {
@@ -487,6 +485,12 @@ const ApplicationForm = () => {
                   />{" "}
                   <span>Delete question</span>
                 </span>
+                <CustomizeButton
+                  type="button"
+                  text="Save"
+                  onClick={() => addCustomisedQuestion(item)}
+                  className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
+                />
               </div>
             </div>
           ))}
