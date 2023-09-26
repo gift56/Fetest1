@@ -16,6 +16,7 @@ module.exports = {
       boxShadow: {
         sideShad: "0px 4px 23px 0px rgba(0, 0, 0, 0.05)",
         cardShad: "3px 3px 14px 0px rgba(190, 190, 190, 0.30)",
+        tabShad: "0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
       },
     },
   },
