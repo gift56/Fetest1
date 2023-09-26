@@ -13,7 +13,7 @@ const App = () => {
             <li
               key={item}
               className={`w-full h-full flex items-center justify-center relative transition-all duration-300 font-Inter text-lg font-medium cursor-pointer first:before:hidden before:content-[''] before:absolute before:w-[2px] before:h-[50%] before:bg-[#C4C4C4] before:right-0 ${
-                tab === item ? "bg-tabColor text-white before:bg-tabColor" : ""
+                tab === item ? "bg-tabColor text-white before:bg-red-500 before:w-10 before:h-6" : ""
               } `}
             >
               {item}
