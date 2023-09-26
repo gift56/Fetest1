@@ -61,7 +61,7 @@ const ApplicationForm = () => {
             onChange={() => {}}
             className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
           />
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="phoneNumber"
               className="text-lg font-semibold text-black"
@@ -101,7 +101,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="nationality"
               className="text-lg font-semibold text-black"
@@ -140,7 +140,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="currentResidence"
               className="text-lg font-semibold text-black"
@@ -179,7 +179,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="idNumber"
               className="text-lg font-semibold text-black"
@@ -218,7 +218,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="dateOfBirth"
               className="text-lg font-semibold text-black"
@@ -257,7 +257,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="gender"
               className="text-lg font-semibold text-black"
@@ -298,7 +298,9 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center justify-start gap-3 cursor-pointer">
             <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
-            <span className="text-sm font-semibold text-black">Add a question</span>
+            <span className="text-sm font-semibold text-black">
+              Add a question
+            </span>
           </div>
         </div>
       </Card>
