@@ -71,8 +71,8 @@ const ApplicationForm = () => {
             </label>
             <div className="flex items-center justify-end gap-4">
               <div className="flex items-center justify-start gap-2">
-                <input type="checkbox" name="internal" id="internal" className="accent-success rounded" />
-                <label htmlFor="internal" className="text-sm font-normal text-black">Internal</label>
+                <input type="checkbox" name="internal" id="internal" className="accent-success rounded cursor-pointer" />
+                <label htmlFor="internal" className="text-sm font-normal text-black cursor-pointer">Internal</label>
               </div>
             </div>
           </div>
