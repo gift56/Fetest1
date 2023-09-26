@@ -441,7 +441,11 @@ const ApplicationForm = () => {
       </Card>
       <Card headline="Question">
         <div className="flex flex-col items-start justify-start w-full gap-3">
-          
+          {values.personalInformation.personalQuestions.map((item, index) => (
+            <div key={index}>
+              
+            </div>
+          ))}
         </div>
       </Card>
       <Card headline="Profile">
