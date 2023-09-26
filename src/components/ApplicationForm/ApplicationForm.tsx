@@ -296,6 +296,10 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
+          <div className="flex items-center justify-start gap-4 cursor-pointer">
+            <img src="/icon/plusIcon.png" alt="plusIcon" />
+            <span>Add a question</span>
+          </div>
         </div>
       </Card>
     </form>
