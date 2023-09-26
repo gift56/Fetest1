@@ -34,7 +34,7 @@ const ApplicationForm = () => {
       setFieldValue("school_image", null);
       return;
     }
-    setFieldValue("school_image", file);
+    setFieldValue("coverImage", file);
   }
 
   return (
