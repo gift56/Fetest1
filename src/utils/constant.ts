@@ -9,3 +9,10 @@ export const questionType = [
   "File upload",
   "Video question",
 ];
+
+export const tabLinks = [
+  "Program Details",
+  "Application Form",
+  "Workflow",
+  "Preview",
+];
