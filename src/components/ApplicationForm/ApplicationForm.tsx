@@ -528,10 +528,10 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      {values.customisedQuestions.length !== 0 && (
+      {values.customisedQuestions.length > 0 && (
         <Card
           headline={`${
-            values.customisedQuestions.length === 0
+            values.customisedQuestions.length > 0
               ? "Additional questions"
               : "Questions"
           }`}
