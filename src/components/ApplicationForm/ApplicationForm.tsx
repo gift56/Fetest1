@@ -413,7 +413,7 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="education"
+                  name="profile.education.mandatory"
                   id="education"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
