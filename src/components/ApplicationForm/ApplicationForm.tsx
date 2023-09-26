@@ -52,7 +52,7 @@ const ApplicationForm = () => {
             labelClassName="text-lg font-semibold text-black"
             showLabel={false}
             id="firstName"
-            name="firstName"
+            name="personalInformation.firstName"
             errorClass="hidden"
             value={values.personalInformation.firstName}
             onBlur={handleBlur}
