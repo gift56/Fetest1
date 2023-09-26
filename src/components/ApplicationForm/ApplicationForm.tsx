@@ -75,7 +75,7 @@ const ApplicationForm = () => {
                   type="checkbox"
                   name="internal"
                   id="internal"
-                  className="accent-success rounded cursor-pointer"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
                   htmlFor="internal"
