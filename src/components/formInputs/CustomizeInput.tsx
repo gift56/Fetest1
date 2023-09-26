@@ -15,6 +15,7 @@ interface CustomizeInputProps extends InputHTMLAttributes<HTMLInputElement> {
   onBlur: (event: FocusEvent<HTMLInputElement>) => void;
   containerClass?: string;
   value: String | Boolean | any;
+  disabled?: boolean;
 }
 
 const CustomizeInput = ({
