@@ -54,7 +54,7 @@ const ApplicationForm = () => {
             id="firstName"
             name="personalInformation.firstName"
             errorClass="hidden"
-            value={values.personalInformation.firstName.show}
+            value={values.personalInformation.firstName.show ? "" : ""}
             onBlur={handleBlur}
             onChange={handleChange}
             disabled={values.personalInformation.firstName.show}
