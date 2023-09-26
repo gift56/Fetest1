@@ -292,7 +292,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="gender"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Gender
             </label>
@@ -300,13 +300,13 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="gender"
+                  name="personalInformation.gender.internalUse"
                   id="gender"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
                   htmlFor="gender"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
                 >
                   Internal
                 </label>
@@ -316,8 +316,8 @@ const ApplicationForm = () => {
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
+                    defaultChecked={values.personalInformation.gender.show}
+                    onChange={handleChange}
                     name="gender"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
