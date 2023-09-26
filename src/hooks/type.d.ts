@@ -1,6 +1,14 @@
 interface QuestionTemplate {
   id: string;
-  type: 'Paragraph' | 'ShortAnswer' | 'YesNo' | 'Dropdown' | 'MultipleChoice' | 'Date' | 'Number' | 'FileUpload';
+  type:
+    | "Paragraph"
+    | "ShortAnswer"
+    | "YesNo"
+    | "Dropdown"
+    | "MultipleChoice"
+    | "Date"
+    | "Number"
+    | "FileUpload";
   question: string;
   choices?: string[]; // If 'type' is 'Dropdown' or 'MultipleChoice'
   maxChoice?: number; // If 'type' is 'MultipleChoice'
@@ -19,7 +27,7 @@ interface PersonalInformationTemplate {
 }
 
 interface FormValue {
-  coverImage: string;
+  coverImage: string | undefined | any;
   personalInformation: {
     firstName: PersonalInformationTemplate;
     lastName: PersonalInformationTemplate;
