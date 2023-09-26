@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ApplicationForm = () => {
-  return <div>ApplicationForm</div>;
+  return <form>ApplicationForm</form>;
 };
 
 export default ApplicationForm;
