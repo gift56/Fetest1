@@ -59,8 +59,6 @@ const ApplicationForm = () => {
     ]);
   };
 
-  
-
   const addCustomisedQuestion = () => {
     setFieldValue("customizedQuestions", [
       ...values.customisedQuestions,
@@ -431,7 +429,304 @@ const ApplicationForm = () => {
             </div>
           </div>
           <div
-            onClick={addCustomisedQuestion}
+            onClick={addPersonalQuestion}
+            className="flex items-center justify-start gap-3 cursor-pointer"
+          >
+            <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
+            <span className="text-sm font-semibold text-black">
+              Add a question
+            </span>
+          </div>
+        </div>
+      </Card>
+      <Card headline="Question">
+        <div className="flex flex-col items-start justify-start w-full gap-3">
+          <CustomizeInput
+            htmlFor="firstName"
+            label="First Name"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={false}
+            id="firstName"
+            name="personalInformation.firstName"
+            value={values.personalInformation.firstName.show ? "" : ""}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            disabled={values.personalInformation.firstName.show}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
+              errors.personalInformation?.firstName ? "!border-red-600" : ""
+            }`}
+          />
+          <CustomizeInput
+            htmlFor="lastName"
+            label="Last Name"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={false}
+            id="lastName"
+            name="personalInformation.lastName"
+            value={values.personalInformation.lastName.show ? "" : ""}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            disabled={values.personalInformation.lastName.show}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
+              errors.personalInformation?.lastName ? "!border-red-600" : ""
+            }`}
+          />
+          <CustomizeInput
+            htmlFor="emailId"
+            label="Email"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={false}
+            id="emailId"
+            name="personalInformation.emailId"
+            value={values.personalInformation.emailId.show ? "" : ""}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            disabled={values.personalInformation.emailId.show}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
+              errors.personalInformation?.emailId ? "!border-red-600" : ""
+            }`}
+          />
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="phoneNumber"
+              className="text-lg font-semibold text-black select-none"
+            >
+              Phone{" "}
+              <span className="text-sm font-normal">(without dial code)</span>
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.phoneNumber.internalUse"
+                  onChange={handleChange}
+                  id="phoneNumber"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="phoneNumber"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={values.personalInformation.phoneNumber.show}
+                    onChange={handleChange}
+                    name="personalInformation.phoneNumber.show"
+                    id="phoneNumber"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center cursor-pointer select-none">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="nationality"
+              className="text-lg font-semibold text-black select-none"
+            >
+              Nationality
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.nationality.internalUse"
+                  id="nationality"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="nationality"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={values.personalInformation.nationality.show}
+                    onChange={handleChange}
+                    name="personalInformation.nationality.show"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="currentResidence"
+              className="text-lg font-semibold text-black select-none"
+            >
+              Current Residence
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.currentResidence.internalUse"
+                  id="currentResidence"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="currentResidence"
+                  className="text-sm font-normal text-black cursor-pointer select-none"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={
+                      values.personalInformation.currentResidence.show
+                    }
+                    onChange={handleChange}
+                    name="currentResidence"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="idNumber"
+              className="text-lg font-semibold text-black select-none"
+            >
+              ID Number
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.idNumber.internalUse"
+                  id="idNumber"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="idNumber"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={values.personalInformation.idNumber.show}
+                    onChange={handleChange}
+                    name="idNumber"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="dateOfBirth"
+              className="text-lg font-semibold text-black select-none"
+            >
+              Date of Birth
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.dateOfBirth.internalUse"
+                  id="dateOfBirth"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="dateOfBirth"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={values.personalInformation.dateOfBirth.show}
+                    onChange={handleChange}
+                    name="dateOfBirth"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
+            <label
+              htmlFor="gender"
+              className="text-lg font-semibold text-black select-none"
+            >
+              Gender
+            </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input
+                  type="checkbox"
+                  name="personalInformation.gender.internalUse"
+                  id="gender"
+                  className="accent-success rounded cursor-pointer w-4 h-4"
+                />
+                <label
+                  htmlFor="gender"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
+                >
+                  Internal
+                </label>
+              </div>
+              <label className="flex items-center gap-3 w-fit relative">
+                <span className="flex items-center justify-center select-none action">
+                  <input
+                    type="checkbox"
+                    className="appearance-none"
+                    defaultChecked={values.personalInformation.gender.show}
+                    onChange={handleChange}
+                    name="gender"
+                  />
+                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                </span>
+                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
+                  Hide
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            onClick={addPersonalQuestion}
             className="flex items-center justify-start gap-3 cursor-pointer"
           >
             <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
@@ -572,15 +867,15 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
+      {values.customisedQuestions.length > 0 && (
+        <Card headline="Additional question">
+          {values.customisedQuestions.map((question, index) => (
+            <div key={index}></div>
+          ))}
+        </Card>
+      )}
     </form>
   );
 };
 
 export default ApplicationForm;
-// {values.customisedQuestions.length > 0 && (
-//   <Card headline="Additional question">
-//     {values.customisedQuestions.map((question, index) => (
-//       <div key={index}></div>
-//     ))}
-//   </Card>
-// )}
