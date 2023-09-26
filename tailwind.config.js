@@ -11,6 +11,7 @@ module.exports = {
         basegray: "#979797",
         danger: "#A80000",
         success: "#087B2F",
+        tabColor: "#00635B",
       },
       boxShadow: {
         cardShad: "3px 3px 14px 0px rgba(190, 190, 190, 0.30)",
