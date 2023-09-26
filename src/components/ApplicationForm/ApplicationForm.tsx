@@ -529,7 +529,13 @@ const ApplicationForm = () => {
         </div>
       </Card>
       {values.customisedQuestions.length !== 0 && (
-        <Card headline="Additional questions">
+        <Card
+          headline={`${
+            values.customisedQuestions.length === 0
+              ? "Additional questions"
+              : "Questions"
+          }`}
+        >
           <div className="flex flex-col items-start justify-start w-full gap-3"></div>
         </Card>
       )}
