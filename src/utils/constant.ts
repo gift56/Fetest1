@@ -23,4 +23,5 @@ export const emptyQuestion = {
   choices: [""],
   maxChoice: 0,
   disqualify: true,
+  other: false,
 };

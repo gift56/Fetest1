@@ -608,50 +608,52 @@ const ApplicationForm = () => {
                   placeholder="Type here"
                   className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 />
-
-                <div className="w-full flex flex-col items-start justify-start gap-3">
-                  <label
-                    htmlFor="choice"
-                    className="text-sm font-medium text-black"
-                  >
-                    Choice
-                  </label>
-
-                  {item.choices?.map((choice, choiceIndex) => (
-                    <div
-                      key={choiceIndex}
-                      className="flex items-center justify-between w-full gap-3"
+                {item.type === "Dropdown" ||
+                item.type === "MultipleChoice" ? (
+                  <div className="w-full flex flex-col items-start justify-start gap-3">
+                    <label
+                      htmlFor="choice"
+                      className="text-sm font-medium text-black"
                     >
-                      <img
-                        src="/icon/listIcon.png"
-                        alt="listIcon"
-                        className="w-6 h-6"
-                      />
-                      <CustomizeInput
-                        showLabel={true}
-                        type="text"
-                        name={`profile.profileQuestions[${index}].choices[${choiceIndex}]`}
-                        value={choice}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder="Type here"
-                        className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
-                      />
-                      <img
-                        src="/icon/plusIcon.png"
-                        alt="plusIcon"
-                        className="w-3 h-3 cursor-pointer"
-                        onClick={() => {
-                          const currentChoices = item.choices || [];
-                          setFieldValue(
-                            `profile.profileQuestions[${index}].choices`,
-                            [...currentChoices, ""]
-                          );
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
+                      Choice
+                    </label>
+
+                    {item.choices?.map((choice, choiceIndex) => (
+                      <div
+                        key={choiceIndex}
+                        className="flex items-center justify-between w-full gap-3"
+                      >
+                        <img
+                          src="/icon/listIcon.png"
+                          alt="listIcon"
+                          className="w-6 h-6"
+                        />
+                        <CustomizeInput
+                          showLabel={true}
+                          type="text"
+                          name={`profile.profileQuestions[${index}].choices[${choiceIndex}]`}
+                          value={choice}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder="Type here"
+                          className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                        />
+                        <img
+                          src="/icon/plusIcon.png"
+                          alt="plusIcon"
+                          className="w-3 h-3 cursor-pointer"
+                          onClick={() => {
+                            const currentChoices = item.choices || [];
+                            setFieldValue(
+                              `profile.profileQuestions[${index}].choices`,
+                              [...currentChoices, ""]
+                            );
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
 
                 <div className="w-full flex items-center justify-between gap-4">
                   <span
