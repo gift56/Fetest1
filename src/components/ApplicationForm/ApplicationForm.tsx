@@ -63,8 +63,11 @@ const ApplicationForm = () => {
               <img
                 src={URL.createObjectURL(values?.coverImage)}
                 alt={values.coverImage?.name}
-                className="w-16 h-16 rounded-full"
+                className="w-full h-[280px] rounded-full"
               />
+              <div className="flex items-center justify-center gap-5">
+
+              </div>
             </div>
           )}
         </>
