@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../card/Card";
+import CustomizeInput from "../formInputs/CustomizeInput";
 
 const ApplicationForm = () => {
   return (
@@ -14,12 +15,21 @@ const ApplicationForm = () => {
           <h3 className="text-sm font-semibold text-black">
             Upload cover image
           </h3>
-          <p className="text-sm font-medium text-basegray">16:9 ratio is recommended. Max image size 1mb</p>
+          <p className="text-sm font-medium text-basegray">
+            16:9 ratio is recommended. Max image size 1mb
+          </p>
         </label>
       </Card>
       <Card headline="Personal Information">
         <div className="flex flex-col items-start justify-start w-full gap-3">
-
+          <CustomizeInput
+            htmlFor="firstName"
+            label="First Name"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={true}
+            id="firstName"
+            name="firstName"
+          />
         </div>
       </Card>
     </form>
