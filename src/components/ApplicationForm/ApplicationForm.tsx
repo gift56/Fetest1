@@ -214,7 +214,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="idNumber"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               ID Number
             </label>
@@ -228,7 +228,7 @@ const ApplicationForm = () => {
                 />
                 <label
                   htmlFor="idNumber"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
                 >
                   Internal
                 </label>
