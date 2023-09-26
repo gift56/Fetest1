@@ -551,7 +551,7 @@ const ApplicationForm = () => {
             </div>
           </div>
           <div
-            onClick={addCustomisedQuestion}
+            onClick={addProfileQuestion}
             className="flex items-center justify-start gap-3 cursor-pointer"
           >
             <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
@@ -563,14 +563,14 @@ const ApplicationForm = () => {
       </Card>
       <div
         className={`${
-          values.personalInformation.personalQuestions.length === 0
+          values.profile.profileQuestions.length === 0
             ? "scale-0 opacity-0 absolute"
             : "scale-1 opacity-100 relative"
         } transition-all duration-300`}
       >
         <Card headline="Question">
           <div className="w-full">
-            {values.personalInformation.personalQuestions.map((item, index) => (
+            {values.profile.profileQuestions.map((item, index) => (
               <div
                 key={index}
                 className="w-full flex flex-col items-start gap-5"
