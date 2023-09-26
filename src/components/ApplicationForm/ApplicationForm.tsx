@@ -609,10 +609,8 @@ const ApplicationForm = () => {
                   placeholder="Type here"
                   className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 />
-                {values.profile.profileQuestions.length > 0 &&
-                  values.profile.profileQuestions.type === "Dropdown" ||
-                  (values.profile.profileQuestions.type ===
-                    "MultipleChoice" && (
+                {item.type === "Dropdown" ||
+                  (item.type === "MultipleChoice" && (
                     <div className="w-full flex flex-col items-start justify-start gap-3">
                       <label
                         htmlFor="choice"
