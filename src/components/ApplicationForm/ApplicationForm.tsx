@@ -477,7 +477,7 @@ const ApplicationForm = () => {
               />
               <div className="w-full flex items-center justify-between gap-4">
                 <span
-                  onClick={() => setFieldValue("coverImage", null)}
+                  onClick={() => removeCustomisedQuestion(index)}
                   className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
                 >
                   <img
