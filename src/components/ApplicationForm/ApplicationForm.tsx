@@ -82,12 +82,14 @@ const ApplicationForm = () => {
             labelClassName="text-lg font-semibold text-black"
             showLabel={false}
             id="emailId"
-            name="emailId"
-            errorClass="hidden"
-            value=""
-            onBlur={() => {}}
-            onChange={() => {}}
-            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
+            name="personalInformation.emailId"
+            value={values.personalInformation.emailId.show ? "" : ""}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            disabled={values.personalInformation.emailId.show}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all disabled:bg-transparent disabled:cursor-not-allowed ${
+              errors.personalInformation?.emailId ? "!border-red-600" : ""
+            }`}
           />
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
