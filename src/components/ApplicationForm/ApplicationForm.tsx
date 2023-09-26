@@ -253,7 +253,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="dateOfBirth"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Date of Birth
             </label>
@@ -261,7 +261,7 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="dateOfBirth"
+                  name="personalInformation.dateOfBirth.internalUse"
                   id="dateOfBirth"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
