@@ -38,16 +38,24 @@ const ApplicationForm = () => {
     setFieldValue("coverImage", file);
   }
 
-  const addQuestion = (name: string) => {
-    setFieldValue("name", [
-      ...values.customisedQuestions,
-      emptyQuestion,
+  const addPersonalQuestion = () => {
+    const newQuestion = {
+      type: "",
+      question: "",
+    };
+    setFieldValue("personalInformation.personalQuestions", [
+      ...values.personalInformation.personalQuestions,
+      newQuestion,
     ]);
   };
-  const removeQuestion = (name: string) => {
-    setFieldValue("name", [
-      ...values.customisedQuestions,
-      emptyQuestion,
+  const addPrfofileQuestion = () => {
+    const newQuestion = {
+      type: "",
+      question: "",
+    };
+    setFieldValue("personalInformation.personalQuestions", [
+      ...values.personalInformation.personalQuestions,
+      newQuestion,
     ]);
   };
 
