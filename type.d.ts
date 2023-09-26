@@ -1,6 +1,7 @@
 interface QuestionTemplate {
+  type: string;
   question: string;
-  choices?: string[]; 
+  choices?: string[];
 }
 
 interface ProfileTemplate {
@@ -16,9 +17,9 @@ interface PersonalInformationTemplate {
 interface ApplicationForm {
   coverImage: string;
   personalInformation: {
-    firstName: PersonalInformationTemplate;
-    lastName: PersonalInformationTemplate;
-    emailId: PersonalInformationTemplate;
+    firstName: String;
+    lastName: String;
+    emailId: String;
     phoneNumber: PersonalInformationTemplate;
     nationality: PersonalInformationTemplate;
     currentResidence: PersonalInformationTemplate;
