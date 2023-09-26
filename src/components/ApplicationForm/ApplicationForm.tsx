@@ -51,11 +51,12 @@ const ApplicationForm = () => {
       newQuestion,
     ]);
   };
-  const addPrfofileQuestion = () => {
-    setFieldValue("personalInformation.personalQuestions", [
-      ...values.personalInformation.personalQuestions,
-      newQuestion,
-    ]);
+  const removePersonalQuestion = (indexToRemove: number) => {
+    const updatedQuestions =
+      values.personalInformation.personalQuestions.filter(
+        (_, index) => index !== indexToRemove
+      );
+    setFieldValue("personalInformation.personalQuestions", updatedQuestions);
   };
 
   const addCustomisedQuestion = (item: any) => {
@@ -472,12 +473,7 @@ const ApplicationForm = () => {
               />
               <div className="w-full flex items-center justify-between gap-4">
                 <span
-                  onClick={() =>
-                    setFieldValue("personalInformation.personalQuestions", [
-                      ...values.personalInformation.personalQuestions,
-                      newQuestion,
-                    ])
-                  }
+                  onClick={() => removePersonalQuestion(index)}
                   className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
                 >
                   <img
@@ -492,10 +488,7 @@ const ApplicationForm = () => {
                   text="Save"
                   onClick={() => {
                     addCustomisedQuestion(item);
-                    setFieldValue("personalInformation.personalQuestions", [
-                      ...values.personalInformation.personalQuestions,
-                      newQuestion,
-                    ]);
+                    removePersonalQuestion(index);
                   }}
                   className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
                 />
