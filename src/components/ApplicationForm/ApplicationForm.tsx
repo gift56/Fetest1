@@ -40,21 +40,18 @@ const ApplicationForm = () => {
     setFieldValue("coverImage", file);
   }
 
+  const newQuestion = {
+    type: "",
+    question: "",
+  };
+
   const addPersonalQuestion = () => {
-    const newQuestion = {
-      type: "",
-      question: "",
-    };
     setFieldValue("personalInformation.personalQuestions", [
       ...values.personalInformation.personalQuestions,
       newQuestion,
     ]);
   };
   const addPrfofileQuestion = () => {
-    const newQuestion = {
-      type: "",
-      question: "",
-    };
     setFieldValue("personalInformation.personalQuestions", [
       ...values.personalInformation.personalQuestions,
       newQuestion,
@@ -450,7 +447,7 @@ const ApplicationForm = () => {
                 value={item.type}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                name={`item[${index}].type`}
+                name={`personalInformation.personalQuestions[${index}].type`}
                 className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
               >
                 {questionType.map((item) => (
@@ -465,7 +462,7 @@ const ApplicationForm = () => {
                 htmlFor="question"
                 labelClassName="text-sm font-normal"
                 type="text"
-                name={`item[${index}].question`}
+                name={`personalInformation.personalQuestions[${index}].question`}
                 value={item.question}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -478,7 +475,7 @@ const ApplicationForm = () => {
                   onClick={() =>
                     setFieldValue("personalInformation.personalQuestions", [
                       ...values.personalInformation.personalQuestions,
-                      null,
+                      newQuestion,
                     ])
                   }
                   className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
@@ -497,7 +494,7 @@ const ApplicationForm = () => {
                     addCustomisedQuestion(item);
                     setFieldValue("personalInformation.personalQuestions", [
                       ...values.personalInformation.personalQuestions,
-                      null,
+                      newQuestion,
                     ]);
                   }}
                   className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
