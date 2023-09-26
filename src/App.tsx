@@ -8,11 +8,11 @@ const App = () => {
   return (
     <MainLayout>
       <div className="w-full flex flex-col items-start justify-start h-screen  py-20 overflow-y-auto overflow-x-hidden">
-        <div className="w-full h-[129px] shadow-tabShad flex items-center justify-start">
+        <ul className="w-full h-[129px] shadow-tabShad flex items-center justify-start">
           {tabLinks.map((item)=>(
-            <div key={item}></div>
+            <li key={item} className={`w-full h-full flex items-center justify-center`}></li>
           ))}
-        </div>
+        </ul>
       </div>
     </MainLayout>
   );
