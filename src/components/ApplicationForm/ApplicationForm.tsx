@@ -14,13 +14,17 @@ const ApplicationForm = () => {
     actions.resetForm();
   };
 
-  const {} = useFormik({
-    initialValues,
-    validationSchema: validationSchema,
-    onSubmit,
-  });
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema: validationSchema,
+      onSubmit,
+    });
   return (
-    <form className="w-full flex flex-col p-5 md:p-10 gap-6">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full flex flex-col p-5 md:p-10 gap-6"
+    >
       <Card headline="Upload cover image">
         <label className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2">
           <img
