@@ -528,9 +528,12 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      <Card headline="Additional questions">
-        <div className="flex flex-col items-start justify-start w-full gap-3"></div>
-      </Card>
+      {values.personalInformation.personalQuestions.length !== 0 ||
+        (values.profile.profileQuestions.length !== 0 && (
+          <Card headline="Additional questions">
+            <div className="flex flex-col items-start justify-start w-full gap-3"></div>
+          </Card>
+        ))}
     </form>
   );
 };
