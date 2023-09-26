@@ -71,7 +71,7 @@ const ApplicationForm = () => {
               />
             </label>
           ) : (
-            <div className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad overflow-hidden h-[400px] my-2">
+            <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
               <img
                 src={URL.createObjectURL(values?.coverImage)}
                 alt={values.coverImage?.name}
@@ -79,7 +79,7 @@ const ApplicationForm = () => {
               />
               <label
                 htmlFor="coverImage"
-                className="flex items-center justify-center gap-5 text-sm font-semibold text-danger cursor-pointer"
+                className="flex items-center justify-center gap-5 text-sm font-semibold text-danger cursor-pointer px-4"
               >
                 <img
                   src="/icon/closeIcon.png"
