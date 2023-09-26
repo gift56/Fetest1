@@ -84,12 +84,12 @@ const ApplicationForm = () => {
                   Internal
                 </label>
               </div>
-              <label className="flex items-center gap-5 w-fit relative">
+              <label className="flex items-center gap-3 w-fit relative">
                 <span className="flex items-center justify-center select-none action">
                   <input
                     type="checkbox"
                     className="appearance-none"
-                    defaultChecked={true}
+                    defaultChecked={false}
                     // onChange={handleChange}
                     name="hide"
                   />
