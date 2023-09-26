@@ -53,8 +53,11 @@ const ApplicationForm = () => {
     setFieldValue("profile.profileQuestions", updatedQuestions);
   };
 
-  const addCustomisedQuestion = (item: any) => {
-    setFieldValue("customizedQuestions", [...values.customisedQuestions, item]);
+  const addCustomisedQuestion = () => {
+    setFieldValue("customizedQuestions", [
+      ...values.customisedQuestions,
+      values.profile.profileQuestions,
+    ]);
   };
 
   const removeCustomisedQuestion = (indexToRemove: number) => {
@@ -694,8 +697,7 @@ const ApplicationForm = () => {
                     type="button"
                     text="Save"
                     onClick={() => {
-                      const itemToAdd = values.profile.profileQuestions[index];
-                      addCustomisedQuestion(itemToAdd);
+                      addCustomisedQuestion();
                       removeProfileQuestion(index);
                     }}
                     className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
