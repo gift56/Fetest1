@@ -405,7 +405,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="education"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Education
             </label>
@@ -445,7 +445,7 @@ const ApplicationForm = () => {
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="experience"
-              className="text-lg font-semibold text-black"
+              className="text-lg font-semibold text-black select-none"
             >
               Experience
             </label>
@@ -459,7 +459,7 @@ const ApplicationForm = () => {
                 />
                 <label
                   htmlFor="experience"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
                 >
                   Mandatory
                 </label>
