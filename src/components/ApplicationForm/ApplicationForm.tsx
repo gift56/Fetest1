@@ -181,7 +181,7 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
             <label
-              htmlFor="phoneNumber"
+              htmlFor="idNumber"
               className="text-lg font-semibold text-black"
             >
               ID Number
@@ -190,12 +190,12 @@ const ApplicationForm = () => {
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="internal"
-                  id="internal"
+                  name="idNumber"
+                  id="idNumber"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
-                  htmlFor="internal"
+                  htmlFor="idNumber"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
                   Internal
@@ -208,7 +208,7 @@ const ApplicationForm = () => {
                     className="appearance-none"
                     defaultChecked={false}
                     // onChange={handleChange}
-                    name="hide"
+                    name="idNumber"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
@@ -220,22 +220,21 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
             <label
-              htmlFor="phoneNumber"
+              htmlFor="dateOfBirth"
               className="text-lg font-semibold text-black"
             >
-              Phone{" "}
-              <span className="text-sm font-normal">(without dial code)</span>
+              Date of Birth
             </label>
             <div className="flex items-center justify-end gap-4">
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="internal"
-                  id="internal"
+                  name="dateOfBirth"
+                  id="dateOfBirth"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
-                  htmlFor="internal"
+                  htmlFor="dateOfBirth"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
                   Internal
@@ -248,7 +247,7 @@ const ApplicationForm = () => {
                     className="appearance-none"
                     defaultChecked={false}
                     // onChange={handleChange}
-                    name="hide"
+                    name="dateOfBirth"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
@@ -260,22 +259,21 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
             <label
-              htmlFor="phoneNumber"
+              htmlFor="gender"
               className="text-lg font-semibold text-black"
             >
-              Phone{" "}
-              <span className="text-sm font-normal">(without dial code)</span>
+              Gender
             </label>
             <div className="flex items-center justify-end gap-4">
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="internal"
-                  id="internal"
+                  name="gender"
+                  id="gender"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
-                  htmlFor="internal"
+                  htmlFor="gender"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
                   Internal
@@ -288,7 +286,7 @@ const ApplicationForm = () => {
                     className="appearance-none"
                     defaultChecked={false}
                     // onChange={handleChange}
-                    name="hide"
+                    name="gender"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
