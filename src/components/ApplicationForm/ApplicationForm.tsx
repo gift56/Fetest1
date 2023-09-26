@@ -599,7 +599,7 @@ const ApplicationForm = () => {
                   showLabel={false}
                   label="Question"
                   htmlFor="question"
-                  labelClassName="text-sm font-normal"
+                  labelClassName="text-sm font-medium text-black"
                   type="text"
                   name={`profile.profileQuestions[${index}].question`}
                   value={item.question}
@@ -612,7 +612,12 @@ const ApplicationForm = () => {
                 {item.type === "Dropdown" ||
                   (item.type === "MultipleChoice" && (
                     <div className="w-full flex flex-col items-start justify-start gap-3">
-                      <label htmlFor="choice">Choice</label>
+                      <label
+                        htmlFor="choice"
+                        className="text-sm font-medium text-black"
+                      >
+                        Choice
+                      </label>
                     </div>
                   ))}
                 <div className="w-full flex items-center justify-between gap-4">
