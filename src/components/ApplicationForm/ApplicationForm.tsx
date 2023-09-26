@@ -4,7 +4,8 @@ import CustomizeInput from "../formInputs/CustomizeInput";
 import validationSchema from "../../schema";
 import FormValue from "../../hooks/type";
 import { generalInitialValues } from "./generalInitialValues";
-import { emptyQuestion } from "../../utils/constant";
+import { emptyQuestion, questionType } from "../../utils/constant";
+import CustomizeSelect from "../formInputs/CustomizeSelect";
 
 const ApplicationForm = () => {
   const initialValues = generalInitialValues;
@@ -442,8 +443,24 @@ const ApplicationForm = () => {
       <Card headline="Question">
         <div className="flex flex-col items-start justify-start w-full gap-3">
           {values.personalInformation.personalQuestions.map((item, index) => (
-            <div key={index}>
-              
+            <div key={index} className="w-full">
+              <CustomizeSelect
+                showLabel={false}
+                label="Type"
+                htmlFor="type"
+                labelClassName="text-sm font-medium text-black"
+                value={item.type}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name={`item[${index}].type`}
+                className="bg-white appearance-none bg-[/public/icon/dropdownIcon.png] bg-no-repeat bg-[center_right_0.3rem] lg:bg-[center_right_1.2rem] border border-white h-[44px] w-full rounded px-4 outline-none text-sm shadow-registerShad text-white placeholder:text-borderColor focus:border-primary transition-all duration-300"
+              >
+                {questionType.map((item) => (
+                  <option id="type" value={item.value} key={item.text}>
+                    {item.text}
+                  </option>
+                ))}
+              </CustomizeSelect>
             </div>
           ))}
         </div>

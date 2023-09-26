@@ -12,7 +12,7 @@ img {
 }
 
 label .action input:checked ~ i {
-  background-color: #087B2F;
+  background-color: #087b2f;
 }
 label .action input:checked ~ i::before {
   left: calc(100% - 24px);
