@@ -66,8 +66,15 @@ const ApplicationForm = () => {
               htmlFor="phoneNumber"
               className="text-lg font-semibold text-black"
             >
-              Phone <span className="text-sm font-normal">(without dial code)</span>
+              Phone{" "}
+              <span className="text-sm font-normal">(without dial code)</span>
             </label>
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-start gap-2">
+                <input type="checkbox" name="internal" id="internal" className="accent-success rounded" />
+                <label htmlFor="internal" className="text-sm font-normal text-black">Internal</label>
+              </div>
+            </div>
           </div>
         </div>
       </Card>
