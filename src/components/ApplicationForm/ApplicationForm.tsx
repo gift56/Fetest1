@@ -7,7 +7,7 @@ const ApplicationForm = () => {
       <Card headline="Upload cover image">
         <label className="w-full border border-black rounded-[5px] flex flex-col items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px]">
           <img
-            src=".icon/uploadIcon.png"
+            src="/icon/uploadIcon.png"
             alt="uploadIcon"
             className="w-8 h-8"
           />
