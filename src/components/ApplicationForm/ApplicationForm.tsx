@@ -38,6 +38,19 @@ const ApplicationForm = () => {
     setFieldValue("coverImage", file);
   }
 
+  const addQuestion = (name: string) => {
+    setFieldValue("name", [
+      ...values.customisedQuestions,
+      emptyQuestion,
+    ]);
+  };
+  const removeQuestion = (name: string) => {
+    setFieldValue("name", [
+      ...values.customisedQuestions,
+      emptyQuestion,
+    ]);
+  };
+
   const addCustomisedQuestion = () => {
     setFieldValue("customizedQuestions", [
       ...values.customisedQuestions,
@@ -549,15 +562,15 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      {values.customisedQuestions.length > 0 && (
-        <Card headline="Additional question">
-          {values.customisedQuestions.map((question, index) => (
-            <div key={index}></div>
-          ))}
-        </Card>
-      )}
     </form>
   );
 };
 
 export default ApplicationForm;
+// {values.customisedQuestions.length > 0 && (
+//   <Card headline="Additional question">
+//     {values.customisedQuestions.map((question, index) => (
+//       <div key={index}></div>
+//     ))}
+//   </Card>
+// )}
