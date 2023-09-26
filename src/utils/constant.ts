@@ -1,6 +1,7 @@
 export const questionType = [
-  "Paragraph",
-  "Short answer",
+  { text: "Paragraph", value: "Paragraph" },
+  { text: "Short answer", value: "ShortAnswer" },
+  "",
   "Yes/No",
   "Dropdown",
   "Multiple choice",
