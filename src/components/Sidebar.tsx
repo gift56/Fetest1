@@ -14,13 +14,13 @@ const Sidebar = () => {
             <img
               src={item}
               alt="barIcon"
-              className="cursor-pointer w-full h-8"
+              className="cursor-pointer w-8 h-8"
               key={i}
             />
           ))}
         </nav>
       </ul>
-      <span></span>
+      <span className="w-10 h-10 bg-[#1D4ED8] rounded-full uppercase text-white text-base font-semibold flex items-center justify-center select-none cursor-pointer">NT</span>
     </div>
   );
 };
