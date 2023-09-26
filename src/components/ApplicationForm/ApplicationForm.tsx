@@ -419,7 +419,7 @@ const ApplicationForm = () => {
                 />
                 <label
                   htmlFor="education"
-                  className="text-sm font-normal text-black cursor-pointer"
+                  className="text-sm font-normal text-black select-none cursor-pointer"
                 >
                   Mandatory
                 </label>
