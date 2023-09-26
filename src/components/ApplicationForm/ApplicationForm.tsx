@@ -608,8 +608,7 @@ const ApplicationForm = () => {
                   placeholder="Type here"
                   className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
                 />
-                {item.type === "Dropdown" ||
-                item.type === "MultipleChoice" ? (
+                {item.type === "Dropdown" || item.type === "MultipleChoice" ? (
                   <div className="w-full flex flex-col items-start justify-start gap-3">
                     <label
                       htmlFor="choice"
@@ -652,6 +651,22 @@ const ApplicationForm = () => {
                         />
                       </div>
                     ))}
+
+                    <div className="flex items-center justify-start gap-2">
+                      <input
+                        type="checkbox"
+                        name={`profile.profileQuestions[${index}].other`}
+                        id="other"
+                        onChange={handleChange}
+                        className="accent-success rounded cursor-pointer w-4 h-4"
+                      />
+                      <label
+                        htmlFor="other"
+                        className="text-sm font-normal text-black select-none cursor-pointer"
+                      >
+                        Enable “Other” option
+                      </label>
+                    </div>
                   </div>
                 ) : null}
 
