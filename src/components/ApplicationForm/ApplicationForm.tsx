@@ -61,6 +61,14 @@ const ApplicationForm = () => {
             onChange={() => {}}
             className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
           />
+          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] px-2 focus:border-primary transition-all">
+            <label
+              htmlFor="phoneNumber"
+              className="text-lg font-semibold text-black"
+            >
+              Phone <span className="text-sm font-normal">(without dial code)</span>
+            </label>
+          </div>
         </div>
       </Card>
     </form>
