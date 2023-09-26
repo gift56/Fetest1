@@ -432,7 +432,7 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      <Card headline="Profile">
+      <Card headline="Additional questions">
         <div className="flex flex-col items-start justify-start w-full gap-3">
           
         </div>
