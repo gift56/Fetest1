@@ -33,7 +33,20 @@ const ApplicationForm = () => {
             value=""
             onBlur={() => {}}
             onChange={() => {}}
-            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all duration-300"
+            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
+          />
+          <CustomizeInput
+            htmlFor="lastName"
+            label="Last Name"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={false}
+            id="lastName"
+            name="lastName"
+            errorClass="hidden"
+            value=""
+            onBlur={() => {}}
+            onChange={() => {}}
+            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
           />
         </div>
       </Card>
