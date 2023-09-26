@@ -40,27 +40,24 @@ const ApplicationForm = () => {
     setFieldValue("coverImage", file);
   }
 
-  const newQuestion = {
-    type: "",
-    question: "",
-  };
-
-  const addPersonalQuestion = () => {
-    setFieldValue("personalInformation.personalQuestions", [
-      ...values.personalInformation.personalQuestions,
-      newQuestion,
+  const addProfileQuestion = () => {
+    setFieldValue("profile.profileQuestions", [
+      ...values.profile.profileQuestions,
+      emptyQuestion,
     ]);
   };
   const removePersonalQuestion = (indexToRemove: number) => {
-    const updatedQuestions =
-      values.personalInformation.personalQuestions.filter(
-        (_, index) => index !== indexToRemove
-      );
-    setFieldValue("personalInformation.personalQuestions", updatedQuestions);
+    const updatedQuestions = values.profile.profileQuestions.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setFieldValue("profile.profileQuestions", updatedQuestions);
   };
 
-  const addCustomisedQuestion = (item: any) => {
-    setFieldValue("customizedQuestions", [...values.customisedQuestions, item]);
+  const addCustomisedQuestion = () => {
+    setFieldValue("customizedQuestions", [
+      ...values.customisedQuestions,
+      emptyQuestion,
+    ]);
   };
 
   const removeCustomisedQuestion = (indexToRemove: number) => {
@@ -69,8 +66,6 @@ const ApplicationForm = () => {
     );
     setFieldValue("customisedQuestions", updatedQuestions);
   };
-
-  console.log(values.customisedQuestions);
 
   return (
     <form
@@ -427,10 +422,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div
-            onClick={addPersonalQuestion}
-            className="flex items-center justify-start gap-3 cursor-pointer"
-          >
+          <div className="flex items-center justify-start gap-3 cursor-pointer">
             <img src="/icon/plusIcon.png" alt="plusIcon" className="w-5 h-5" />
             <span className="text-sm font-semibold text-black">
               Add a question
@@ -438,78 +430,6 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      <div
-        className={`${
-          values.personalInformation.personalQuestions.length === 0
-            ? "scale-0 opacity-0 absolute"
-            : "scale-1 opacity-100 relative"
-        } transition-all duration-300`}
-      >
-        <Card headline="Question">
-          <div className="w-full">
-            {values.personalInformation.personalQuestions.map((item, index) => (
-              <div
-                key={index}
-                className="w-full flex flex-col items-start gap-5"
-              >
-                <CustomizeSelect
-                  showLabel={false}
-                  label="Type"
-                  htmlFor="type"
-                  labelClassName="text-sm font-medium text-black"
-                  value={item.type}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name={`personalInformation.personalQuestions[${index}].type`}
-                  className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
-                >
-                  {questionType.map((item) => (
-                    <option id="type" value={item.value} key={item.text}>
-                      {item.text}
-                    </option>
-                  ))}
-                </CustomizeSelect>
-                <CustomizeInput
-                  showLabel={false}
-                  label="Question"
-                  htmlFor="question"
-                  labelClassName="text-sm font-normal"
-                  type="text"
-                  name={`personalInformation.personalQuestions[${index}].question`}
-                  value={item.question}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  id="question"
-                  placeholder="Type here"
-                  className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
-                />
-                <div className="w-full flex items-center justify-between gap-4">
-                  <span
-                    onClick={() => removePersonalQuestion(index)}
-                    className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
-                  >
-                    <img
-                      src="/icon/closeIcon.png"
-                      alt="closeIcon"
-                      className="w-6 h-6"
-                    />{" "}
-                    <span>Delete question</span>
-                  </span>
-                  <CustomizeButton
-                    type="button"
-                    text="Save"
-                    onClick={() => {
-                      addPersonalQuestion(item);
-                      addCustomisedQuestion(item);
-                    }}
-                    className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
       <Card headline="Profile">
         <div className="flex flex-col items-start justify-start w-full gap-3">
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
@@ -641,13 +561,77 @@ const ApplicationForm = () => {
           </div>
         </div>
       </Card>
-      {values.customisedQuestions.length > 0 && (
-        <Card headline="Additional question">
-          {values.customisedQuestions.map((question, index) => (
-            <div key={index}></div>
-          ))}
+      <div
+        className={`${
+          values.personalInformation.personalQuestions.length === 0
+            ? "scale-0 opacity-0 absolute"
+            : "scale-1 opacity-100 relative"
+        } transition-all duration-300`}
+      >
+        <Card headline="Question">
+          <div className="w-full">
+            {values.personalInformation.personalQuestions.map((item, index) => (
+              <div
+                key={index}
+                className="w-full flex flex-col items-start gap-5"
+              >
+                <CustomizeSelect
+                  showLabel={false}
+                  label="Type"
+                  htmlFor="type"
+                  labelClassName="text-sm font-medium text-black"
+                  value={item.type}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  name={`personalInformation.personalQuestions[${index}].type`}
+                  className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                >
+                  {questionType.map((item) => (
+                    <option id="type" value={item.value} key={item.text}>
+                      {item.text}
+                    </option>
+                  ))}
+                </CustomizeSelect>
+                <CustomizeInput
+                  showLabel={false}
+                  label="Question"
+                  htmlFor="question"
+                  labelClassName="text-sm font-normal"
+                  type="text"
+                  name={`personalInformation.personalQuestions[${index}].question`}
+                  value={item.question}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="question"
+                  placeholder="Type here"
+                  className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                />
+                <div className="w-full flex items-center justify-between gap-4">
+                  <span
+                    onClick={() => removeCustomisedQuestion(index)}
+                    className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
+                  >
+                    <img
+                      src="/icon/closeIcon.png"
+                      alt="closeIcon"
+                      className="w-6 h-6"
+                    />
+                    <span>Delete question</span>
+                  </span>
+                  <CustomizeButton
+                    type="button"
+                    text="Save"
+                    onClick={() => {
+                      addCustomisedQuestion();
+                    }}
+                    className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </Card>
-      )}
+      </div>
     </form>
   );
 };
