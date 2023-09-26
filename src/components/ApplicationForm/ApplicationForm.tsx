@@ -20,6 +20,10 @@ const ApplicationForm = () => {
       validationSchema: validationSchema,
       onSubmit,
     });
+
+  const getError = (key: keyof FormValue) => {
+    return touched[key] && errors[key];
+  };
   return (
     <form
       onSubmit={handleSubmit}
@@ -50,10 +54,12 @@ const ApplicationForm = () => {
             id="firstName"
             name="firstName"
             errorClass="hidden"
-            value=""
-            onBlur={() => {}}
-            onChange={() => {}}
-            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
+            value={values.personalInformation.firstName}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            className={`w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all ${
+              errors.personalInformation?.firstName ? "!border-red-600" : ""
+            }`}
           />
           <CustomizeInput
             htmlFor="lastName"
