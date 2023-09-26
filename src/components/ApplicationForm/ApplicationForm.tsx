@@ -325,7 +325,7 @@ const ApplicationForm = () => {
                   htmlFor="education"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
-                  Internal
+                  Mandatory
                 </label>
               </div>
               <label className="flex items-center gap-3 w-fit relative">
@@ -345,45 +345,7 @@ const ApplicationForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
-            <label
-              htmlFor="nationality"
-              className="text-lg font-semibold text-black"
-            >
-              Nationality
-            </label>
-            <div className="flex items-center justify-end gap-4">
-              <div className="flex items-center justify-start gap-2">
-                <input
-                  type="checkbox"
-                  name="nationality"
-                  id="nationality"
-                  className="accent-success rounded cursor-pointer w-4 h-4"
-                />
-                <label
-                  htmlFor="nationality"
-                  className="text-sm font-normal text-black cursor-pointer"
-                >
-                  Internal
-                </label>
-              </div>
-              <label className="flex items-center gap-3 w-fit relative">
-                <span className="flex items-center justify-center select-none action">
-                  <input
-                    type="checkbox"
-                    className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
-                    name="nationality"
-                  />
-                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
-                </span>
-                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
-                  Hide
-                </span>
-              </label>
-            </div>
-          </div>
+
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
               htmlFor="experience"
@@ -403,7 +365,7 @@ const ApplicationForm = () => {
                   htmlFor="experience"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
-                  Internal
+                  Mandatory
                 </label>
               </div>
               <label className="flex items-center gap-3 w-fit relative">
@@ -425,24 +387,24 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
             <label
-              htmlFor="idNumber"
+              htmlFor="resume"
               className="text-lg font-semibold text-black"
             >
-              ID Number
+              Resume
             </label>
             <div className="flex items-center justify-end gap-4">
               <div className="flex items-center justify-start gap-2">
                 <input
                   type="checkbox"
-                  name="idNumber"
-                  id="idNumber"
+                  name="resume"
+                  id="resume"
                   className="accent-success rounded cursor-pointer w-4 h-4"
                 />
                 <label
-                  htmlFor="idNumber"
+                  htmlFor="resume"
                   className="text-sm font-normal text-black cursor-pointer"
                 >
-                  Internal
+                  Mandatory
                 </label>
               </div>
               <label className="flex items-center gap-3 w-fit relative">
@@ -452,85 +414,7 @@ const ApplicationForm = () => {
                     className="appearance-none"
                     defaultChecked={false}
                     // onChange={handleChange}
-                    name="idNumber"
-                  />
-                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
-                </span>
-                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
-                  Hide
-                </span>
-              </label>
-            </div>
-          </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
-            <label
-              htmlFor="dateOfBirth"
-              className="text-lg font-semibold text-black"
-            >
-              Date of Birth
-            </label>
-            <div className="flex items-center justify-end gap-4">
-              <div className="flex items-center justify-start gap-2">
-                <input
-                  type="checkbox"
-                  name="dateOfBirth"
-                  id="dateOfBirth"
-                  className="accent-success rounded cursor-pointer w-4 h-4"
-                />
-                <label
-                  htmlFor="dateOfBirth"
-                  className="text-sm font-normal text-black cursor-pointer"
-                >
-                  Internal
-                </label>
-              </div>
-              <label className="flex items-center gap-3 w-fit relative">
-                <span className="flex items-center justify-center select-none action">
-                  <input
-                    type="checkbox"
-                    className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
-                    name="dateOfBirth"
-                  />
-                  <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
-                </span>
-                <span className="text-[#666] text-sm font-normal flex items-center justify-center select-none cursor-pointer">
-                  Hide
-                </span>
-              </label>
-            </div>
-          </div>
-          <div className="flex items-center justify-between w-full gap-3 pb-3 border-b border-[#C4C4C4] focus:border-primary transition-all">
-            <label
-              htmlFor="gender"
-              className="text-lg font-semibold text-black"
-            >
-              Gender
-            </label>
-            <div className="flex items-center justify-end gap-4">
-              <div className="flex items-center justify-start gap-2">
-                <input
-                  type="checkbox"
-                  name="gender"
-                  id="gender"
-                  className="accent-success rounded cursor-pointer w-4 h-4"
-                />
-                <label
-                  htmlFor="gender"
-                  className="text-sm font-normal text-black cursor-pointer"
-                >
-                  Internal
-                </label>
-              </div>
-              <label className="flex items-center gap-3 w-fit relative">
-                <span className="flex items-center justify-center select-none action">
-                  <input
-                    type="checkbox"
-                    className="appearance-none"
-                    defaultChecked={false}
-                    // onChange={handleChange}
-                    name="gender"
+                    name="resume"
                   />
                   <i className="bg-[#F4F4F4] border relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[1px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
                 </span>
