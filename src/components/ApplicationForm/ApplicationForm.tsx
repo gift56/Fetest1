@@ -45,7 +45,10 @@ const ApplicationForm = () => {
       <Card headline="Upload cover image">
         <>
           {!values.coverImage ? (
-            <label className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2">
+            <label
+              htmlFor="coverImage"
+              className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2"
+            >
               <img
                 src="/icon/uploadIcon.png"
                 alt="uploadIcon"
@@ -57,17 +60,27 @@ const ApplicationForm = () => {
               <p className="text-sm font-medium text-basegray">
                 16:9 ratio is recommended. Max image size 1mb
               </p>
+              <input
+                type="file"
+                name="coverImage"
+                onChange={handleImageChange}
+                onBlur={handleBlur}
+                accept="image/*"
+                id="coverImage"
+                className="hidden"
+              />
             </label>
           ) : (
             <div className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2">
               <img
                 src={URL.createObjectURL(values?.coverImage)}
                 alt={values.coverImage?.name}
-                className="w-full h-[280px] rounded-full"
+                className="w-full h-[280px]"
               />
-              <div className="flex items-center justify-center gap-5">
-
-              </div>
+              <label className="flex items-center justify-center gap-5 text-sm font-semibold cursor-pointer">
+                <img src="/icon/closeIcon.png" alt="closeIcon" />
+                <span>Delete & re-upload</span>
+              </label>
             </div>
           )}
         </>
