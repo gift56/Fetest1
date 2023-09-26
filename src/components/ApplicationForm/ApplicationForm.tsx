@@ -485,7 +485,7 @@ const ApplicationForm = () => {
                     alt="closeIcon"
                     className="w-6 h-6"
                   />{" "}
-                  Delete question
+                  <span>Delete question</span>
                 </span>
               </div>
             </div>
