@@ -1,7 +1,11 @@
 interface QuestionTemplate {
-  type: string;
+  id: string;
+  type: 'Paragraph' | 'ShortAnswer' | 'YesNo' | 'Dropdown' | 'MultipleChoice' | 'Date' | 'Number' | 'FileUpload';
   question: string;
-  choices?: string[];
+  choices?: string[]; // If 'type' is 'Dropdown' or 'MultipleChoice'
+  maxChoice?: number; // If 'type' is 'MultipleChoice'
+  disqualify: boolean;
+  other: boolean;
 }
 
 interface ProfileTemplate {
@@ -14,12 +18,12 @@ interface PersonalInformationTemplate {
   show: boolean;
 }
 
-interface ApplicationForm {
+interface FormValue {
   coverImage: string;
   personalInformation: {
-    firstName: String;
-    lastName: String;
-    emailId: String;
+    firstName: PersonalInformationTemplate;
+    lastName: PersonalInformationTemplate;
+    emailId: PersonalInformationTemplate;
     phoneNumber: PersonalInformationTemplate;
     nationality: PersonalInformationTemplate;
     currentResidence: PersonalInformationTemplate;
@@ -37,4 +41,4 @@ interface ApplicationForm {
   customisedQuestions: QuestionTemplate[];
 }
 
-export default ApplicationForm;
+export default FormValue;

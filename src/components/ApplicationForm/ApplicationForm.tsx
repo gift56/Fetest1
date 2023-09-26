@@ -48,6 +48,19 @@ const ApplicationForm = () => {
             onChange={() => {}}
             className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
           />
+          <CustomizeInput
+            htmlFor="emailId"
+            label="Email"
+            labelClassName="text-lg font-semibold text-black"
+            showLabel={false}
+            id="emailId"
+            name="emailId"
+            errorClass="hidden"
+            value=""
+            onBlur={() => {}}
+            onChange={() => {}}
+            className="w-full border-b border-[#C4C4C4] px-2 focus:border-primary transition-all"
+          />
         </div>
       </Card>
     </form>
