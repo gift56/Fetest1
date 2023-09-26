@@ -1,4 +1,5 @@
 const Sidebar = () => {
+  const sideBardIcon = ["/icon/homeIcon.png"];
   return (
     <ul className="w-full h-screen p-8 shadow-sideShad sticky top-0 flex flex-col items-center justify-start gap-8">
       <div className="cursor-pointer">
