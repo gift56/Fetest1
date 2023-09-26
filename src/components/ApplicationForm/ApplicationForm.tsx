@@ -475,7 +475,12 @@ const ApplicationForm = () => {
               />
               <div className="w-full flex items-center justify-between gap-4">
                 <span
-                  onClick={() => removeCustomisedQuestion(index)}
+                  onClick={() =>
+                    setFieldValue("personalInformation.personalQuestions", [
+                      ...values.personalInformation.personalQuestions,
+                      null,
+                    ])
+                  }
                   className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
                 >
                   <img
@@ -488,7 +493,13 @@ const ApplicationForm = () => {
                 <CustomizeButton
                   type="button"
                   text="Save"
-                  onClick={() => addCustomisedQuestion(item)}
+                  onClick={() => {
+                    addCustomisedQuestion(item);
+                    setFieldValue("personalInformation.personalQuestions", [
+                      ...values.personalInformation.personalQuestions,
+                      null,
+                    ]);
+                  }}
                   className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
                 />
               </div>
