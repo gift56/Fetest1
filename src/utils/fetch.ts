@@ -7,7 +7,7 @@ const fetchDataFromServer = async () => {
 };
 
 const updateServerData = async (payload: FormValue) => {
-  return await baseUrl.put(request.requestapplication, payload);
+  return await baseUrl.post(request.requestapplication, payload);
 };
 
 export { fetchDataFromServer, updateServerData };
