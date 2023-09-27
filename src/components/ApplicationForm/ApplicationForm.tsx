@@ -67,12 +67,7 @@ const ApplicationForm = () => {
 
   function handleImageChange(event: any) {
     const file = event.currentTarget.files[0];
-    if (file && !file.type.startsWith("image/")) {
-      alert("Please select an image file");
-      setFieldValue("coverImage", null);
-      return;
-    }
-    setFieldValue("coverImage", file.name);
+    setFieldValue("coverImage", file);
   }
 
   const addProfileQuestion = () => {
