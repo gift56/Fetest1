@@ -803,7 +803,7 @@ const ApplicationForm = () => {
         type="submit"
         text="Submit"
         disabled={isSubmitting}
-        className="!w-fit bg-success text-white !px-10 !rounded-md"
+        className="!w-fit bg-success text-white !px-10 !rounded-md disabled:bg-primary disabled:cursor-not-allowed"
       />
     </form>
   );
