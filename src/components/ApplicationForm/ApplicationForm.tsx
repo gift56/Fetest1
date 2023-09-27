@@ -38,7 +38,6 @@ const ApplicationForm = () => {
     } catch (error: any) {
       toast.error(error && error?.message);
     }
-
     await new Promise((res) => setTimeout(res, 1000));
     actions.resetForm();
   };
