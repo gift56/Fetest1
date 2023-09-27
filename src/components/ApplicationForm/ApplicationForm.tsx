@@ -54,7 +54,7 @@ const ApplicationForm = () => {
   };
 
   const addCustomisedQuestion = (item: any) => {
-    setFieldValue("customizedQuestions", [...values.customisedQuestions, item]);
+    setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
 
   const removeCustomisedQuestion = (indexToRemove: number) => {
@@ -568,6 +568,153 @@ const ApplicationForm = () => {
         <Card headline="Question">
           <div className="w-full">
             {values.profile.profileQuestions.map((item, index) => (
+              <div
+                key={index}
+                className="w-full flex flex-col items-start gap-5"
+              >
+                <CustomizeSelect
+                  showLabel={false}
+                  label="Type"
+                  htmlFor="type"
+                  labelClassName="text-sm font-medium text-black"
+                  value={item.type}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  name={`profile.profileQuestions[${index}].type`}
+                  className="bg-white appearance-none border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                >
+                  {questionType.map((item) => (
+                    <option id="type" value={item.value} key={item.text}>
+                      {item.text}
+                    </option>
+                  ))}
+                </CustomizeSelect>
+                <CustomizeInput
+                  showLabel={false}
+                  label="Question"
+                  htmlFor="question"
+                  labelClassName="text-sm font-medium text-black"
+                  type="text"
+                  name={`profile.profileQuestions[${index}].question`}
+                  value={item.question}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="question"
+                  placeholder="Type here"
+                  className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                />
+                {item.type === "Dropdown" || item.type === "MultipleChoice" ? (
+                  <div className="w-full flex flex-col items-start justify-start gap-3">
+                    <label
+                      htmlFor="choice"
+                      className="text-sm font-medium text-black"
+                    >
+                      Choice
+                    </label>
+
+                    {item.choices?.map((choice, choiceIndex) => (
+                      <div
+                        key={choiceIndex}
+                        className="flex items-center justify-between w-full gap-3"
+                      >
+                        <img
+                          src="/icon/listIcon.png"
+                          alt="listIcon"
+                          className="w-6 h-6"
+                        />
+                        <CustomizeInput
+                          showLabel={true}
+                          type="text"
+                          name={`profile.profileQuestions[${index}].choices[${choiceIndex}]`}
+                          value={choice}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder="Type here"
+                          className="bg-white border border-black h-[44px] w-full rounded px-4 outline-none text-sm text-basegray placeholder:text-basegray focus:border-primary transition-all duration-300"
+                        />
+                        <img
+                          src="/icon/plusIcon.png"
+                          alt="plusIcon"
+                          className="w-3 h-3 cursor-pointer"
+                          onClick={() => {
+                            const currentChoices = item.choices || [];
+                            setFieldValue(
+                              `profile.profileQuestions[${index}].choices`,
+                              [...currentChoices, ""]
+                            );
+                          }}
+                        />
+                      </div>
+                    ))}
+
+                    <div className="flex items-center justify-start gap-2">
+                      <input
+                        type="checkbox"
+                        name={`${
+                          item.type === "Dropdown"
+                            ? `profile.profileQuestions[${index}].other`
+                            : `profile.profileQuestions[${index}].disqualify`
+                        }`}
+                        id={`${
+                          item.type === "Dropdown" ? "other" : "disqualify"
+                        }`}
+                        onChange={handleChange}
+                        className="accent-success rounded cursor-pointer w-4 h-4"
+                      />
+                      <label
+                        htmlFor={`${
+                          item.type === "Dropdown" ? "other" : "disqualify"
+                        }`}
+                        className="text-sm font-normal text-black select-none cursor-pointer"
+                      >
+                        {item.type === "Dropdown"
+                          ? "Enable “Other” option"
+                          : "Disqualify candidate if the answer is no"}
+                      </label>
+                    </div>
+                  </div>
+                ) : null}
+
+                <div className="w-full flex items-center justify-between gap-4">
+                  <span
+                    onClick={() => removeProfileQuestion(index)}
+                    className="text-sm font-semibold text-danger cursor-pointer flex items-center justify-center gap-3"
+                  >
+                    <img
+                      src="/icon/closeIcon.png"
+                      alt="closeIcon"
+                      className="w-6 h-6"
+                    />
+                    <span>Delete question</span>
+                  </span>
+                  <CustomizeButton
+                    type="button"
+                    text="Save"
+                    onClick={() => {
+                      const itemToAdd = values.profile.profileQuestions[index];
+                      addCustomisedQuestion(itemToAdd);
+                      if (!itemToAdd) {
+                        removeProfileQuestion(index);
+                      }
+                    }}
+                    className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+      <div
+        className={`${
+          values.customisedQuestions.length === 0
+            ? "scale-0 opacity-0 absolute"
+            : "scale-1 opacity-100 relative"
+        } transition-all duration-300`}
+      >
+        <Card headline="Additional questions">
+          <div className="w-full">
+            {values.customisedQuestions.map((item, index) => (
               <div
                 key={index}
                 className="w-full flex flex-col items-start gap-5"
