@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import Card from "../card/Card";
 import CustomizeInput from "../formInputs/CustomizeInput";
@@ -112,7 +113,10 @@ const ApplicationForm = () => {
                     Delete{" "}
                   </span>{" "}
                   &
-                  <label htmlFor="coverImage" className="text-success cursor-pointer">
+                  <label
+                    htmlFor="coverImage"
+                    className="text-success cursor-pointer"
+                  >
                     re-upload
                   </label>
                 </div>
