@@ -754,6 +754,7 @@ const ApplicationForm = () => {
                       addCustomisedQuestion(itemToAdd);
                       if (itemToAdd) {
                         removeProfileQuestion(index);
+                        toast.success("Saved Successfully!");
                       }
                     }}
                     className="flex items-center justify-center bg-success rounded w-fit px-4 py-2 text-white"
