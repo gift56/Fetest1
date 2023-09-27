@@ -25,6 +25,7 @@ const ApplicationForm = () => {
     errors,
     setFieldValue,
     isSubmitting,
+    touched,
   } = useFormik({
     initialValues,
     validationSchema: validationSchema,
@@ -68,7 +69,9 @@ const ApplicationForm = () => {
           {!values.coverImage ? (
             <label
               htmlFor="coverImage"
-              className="w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2"
+              className={`w-full border border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2 ${
+                errors.coverImage && touched.coverImage?"!border-red-500":""
+              }`}
             >
               <img
                 src="/icon/uploadIcon.png"
