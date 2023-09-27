@@ -8,8 +8,16 @@ import { generalInitialValues } from "./generalInitialValues";
 import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
+import fetchDataFromServer from "../../utils/fetch";
 
 const ApplicationForm = () => {
+  const [formData, setFormData] = useState<any>(null);
+  useEffect(() => {
+    fetchDataFromServer()
+      .then((res) => console.log(res))
+      .catch((errors) => console.log(errors));
+  }, []);
+
   const initialValues = generalInitialValues;
 
   const onSubmit = async (payload: FormValue, actions: any) => {
