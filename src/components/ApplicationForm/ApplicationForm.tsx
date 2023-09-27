@@ -19,7 +19,7 @@ const ApplicationForm = () => {
       setLoading(true);
       try {
         const res = await fetchDataFromServer();
-        setFormData(res?.data?.data);
+        setFormData(res?.data?.data?.attributes);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -79,6 +79,7 @@ const ApplicationForm = () => {
     setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
 
+  console.log(values.coverImage);
   console.log(formData);
 
   if (loading) return <p className="p-8">Loading...</p>;
@@ -118,11 +119,12 @@ const ApplicationForm = () => {
                 className="hidden"
               />
             </label>
-          ) : (
+          ) : typeof values.coverImage === "string" ? (
+            // Handle the case when values.coverImage is a string (URL)
             <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
               <img
-                src={URL.createObjectURL(values?.coverImage)}
-                alt={values.coverImage?.name}
+                src={values.coverImage}
+                alt="Cover Image"
                 className="w-full h-[300px] object-cover"
               />
               <div className="flex items-center justify-center gap-3 text-sm font-semibold text-danger cursor-pointer px-4">
@@ -134,7 +136,44 @@ const ApplicationForm = () => {
                 <div className="flex items-center gap-2">
                   <span onClick={() => setFieldValue("coverImage", null)}>
                     Delete{" "}
-                  </span>{" "}
+                  </span>
+                  &
+                  <label
+                    htmlFor="coverImage"
+                    className="text-success cursor-pointer"
+                  >
+                    re-upload
+                  </label>
+                </div>
+                <input
+                  type="file"
+                  name="coverImage"
+                  onChange={handleImageChange}
+                  onBlur={handleBlur}
+                  accept="image/*"
+                  id="coverImage"
+                  className="hidden"
+                />
+              </div>
+            </div>
+          ) : (
+            // Handle the case when values.coverImage is a Blob
+            <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
+              <img
+                src={URL.createObjectURL(values.coverImage)}
+                alt="uploaded image"
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="flex items-center justify-center gap-3 text-sm font-semibold text-danger cursor-pointer px-4">
+                <img
+                  src="/icon/closeIcon.png"
+                  alt="closeIcon"
+                  className="w-6 h-6"
+                />
+                <div className="flex items-center gap-2">
+                  <span onClick={() => setFieldValue("coverImage", null)}>
+                    Delete{" "}
+                  </span>
                   &
                   <label
                     htmlFor="coverImage"

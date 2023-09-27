@@ -27,7 +27,7 @@ interface PersonalInformationTemplate {
 }
 
 interface FormValue {
-  coverImage: string | undefined | any;
+  coverImage: string;
   personalInformation: {
     firstName: PersonalInformationTemplate;
     lastName: PersonalInformationTemplate;

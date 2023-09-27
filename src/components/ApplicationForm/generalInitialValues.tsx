@@ -1,7 +1,7 @@
 import FormValue from "../../hooks/type";
 
 export const generalInitialValues: FormValue = {
-  coverImage: "" || null,
+  coverImage: "",
   personalInformation: {
     firstName: {
       internalUse: false,
