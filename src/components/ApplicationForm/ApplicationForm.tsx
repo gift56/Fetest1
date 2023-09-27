@@ -15,11 +15,11 @@ const ApplicationForm = () => {
 
   useEffect(() => {
     fetchDataFromServer()
-      .then((res) => console.log(res.data))
+      .then((res) => setFormData(res.data))
       .catch((errors) => console.log(errors));
   }, []);
 
-  const initialValues = generalInitialValues;
+  const initialValues = formData.attributes || generalInitialValues;
 
   const onSubmit = async (payload: FormValue, actions: any) => {
     console.log(payload);
