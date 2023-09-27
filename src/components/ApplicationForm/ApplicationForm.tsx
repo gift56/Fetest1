@@ -10,13 +10,6 @@ import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
 import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 
-interface ApplicationFormData {
-  data: {
-    id: string;
-    type: string;
-    attributes: FormValue;
-  };
-}
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(undefined);
@@ -40,8 +33,8 @@ const ApplicationForm = () => {
   }, []);
 
   const onSubmit = async (payload: FormValue, actions: any) => {
-    const newPayload: ApplicationFormData = {
-      id: gettingId || "",
+    const newPayload: any = {
+      id: gettingId,
       type: "applicationForm",
       attributes: payload,
     };
