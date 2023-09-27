@@ -11,15 +11,24 @@ import CustomizeButton from "../CustomizeButton";
 import fetchDataFromServer from "../../utils/fetch";
 
 const ApplicationForm = () => {
-  const [formData, setFormData] = useState<any>(null);
+  const [formData, setFormData] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchDataFromServer()
-      .then((res) => setFormData(res.data))
-      .catch((errors) => console.log(errors));
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const res = await fetchDataFromServer();
+        console.log("res", res?.data?.attribute);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
   }, []);
 
-  const initialValues = formData.attributes || generalInitialValues;
+  const initialValues = generalInitialValues;
 
   const onSubmit = async (payload: FormValue, actions: any) => {
     console.log(payload);
@@ -68,6 +77,10 @@ const ApplicationForm = () => {
   const addCustomisedQuestion = (item: any) => {
     setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
+
+  console.log(formData);
+
+  if (loading) return "Loading...";
 
   return (
     <form
