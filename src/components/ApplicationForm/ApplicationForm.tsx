@@ -9,7 +9,8 @@ import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
 import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
-
+import toast from "react-hot-toast";
+import { AxiosError } from "axios";
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(undefined);
@@ -42,9 +43,15 @@ const ApplicationForm = () => {
       const res = await updateServerData(newPayload);
       console.log(res.data);
       return res.data;
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      const axiosError = error as AxiosError;
+      if (axiosError.response) {
+        toast.error(error && axiosError?.response?.data);
+      } else {
+        toast.error(error && axiosError?.message);
+      }
     }
+
     await new Promise((res) => setTimeout(res, 1000));
     actions.resetForm();
   };
