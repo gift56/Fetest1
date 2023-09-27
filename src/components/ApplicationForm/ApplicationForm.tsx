@@ -12,9 +12,10 @@ import fetchDataFromServer from "../../utils/fetch";
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState<any>(null);
+
   useEffect(() => {
     fetchDataFromServer()
-      .then((res) => console.log(res))
+      .then((res) => console.log(res.data))
       .catch((errors) => console.log(errors));
   }, []);
 
