@@ -5,4 +5,4 @@ const fetchDataFromServer = async () => {
   return await baseUrl.get(request.requestapplication);
 };
 
-export default fetchDataFromServer;
+export { fetchDataFromServer };
