@@ -19,7 +19,7 @@ const ApplicationForm = () => {
       setLoading(true);
       try {
         const res = await fetchDataFromServer();
-        console.log("res", res?.data?.attribute);
+        setFormData(res?.data?.attributes);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -29,7 +29,7 @@ const ApplicationForm = () => {
     fetchData();
   }, []);
 
-  const initialValues = generalInitialValues;
+  const initialValues = formData || generalInitialValues;
 
   const onSubmit = async (payload: FormValue, actions: any) => {
     console.log(payload);
@@ -81,7 +81,7 @@ const ApplicationForm = () => {
 
   console.log(formData);
 
-  if (loading) return "Loading...";
+  if (loading) return <p>Loading...</p>;
 
   return (
     <form
