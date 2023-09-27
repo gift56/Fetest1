@@ -57,13 +57,6 @@ const ApplicationForm = () => {
     setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
 
-  const removeCustomisedQuestion = (indexToRemove: number) => {
-    const updatedQuestions = values.customisedQuestions.filter(
-      (_, index) => index !== indexToRemove
-    );
-    setFieldValue("customisedQuestions", updatedQuestions);
-  };
-
   return (
     <form
       onSubmit={handleSubmit}
@@ -705,7 +698,7 @@ const ApplicationForm = () => {
           </div>
         </Card>
       </div>
-
+{/* 
       <div
         className={`${
           values.customisedQuestions.length === 0
@@ -804,7 +797,7 @@ const ApplicationForm = () => {
             ))}
           </div>
         </Card>
-      </div>
+      </div> */}
     </form>
   );
 };
