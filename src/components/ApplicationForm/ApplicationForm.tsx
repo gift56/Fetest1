@@ -31,7 +31,7 @@ const ApplicationForm = () => {
 
   const onSubmit = async (payload: FormValue, actions: any) => {
     try {
-      const res = await updateServerData();
+      const res = await updateServerData(payload);
       console.log(res.data)
       return res.data
     } catch (error) {
