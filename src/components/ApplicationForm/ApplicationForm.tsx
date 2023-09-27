@@ -13,7 +13,7 @@ import toast from "react-hot-toast";
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(undefined);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
