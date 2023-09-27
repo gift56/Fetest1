@@ -78,9 +78,6 @@ const ApplicationForm = () => {
     setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
 
-  console.log(values);
-  console.log(formData);
-
   if (loading) return <p className="p-8">Loading...</p>;
 
   return (
