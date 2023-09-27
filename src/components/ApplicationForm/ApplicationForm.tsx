@@ -93,8 +93,15 @@ const ApplicationForm = () => {
           </h2>
           <p className="text-base text-center md:text-lg font-normal">
             Thank you once again for the opportunity to apply for this position.
-            I look forward to the possibility of becoming a part of the FE Test family and contributing to its continued success.
+            I look forward to the possibility of becoming a part of the FE Test
+            family and contributing to its continued success.
           </p>
+          <CustomizeButton
+            onClick={() => setSuccess(false)}
+            type="button"
+            text="Send another"
+            className="bg-success rounded !px-10 text-white"
+          />
         </div>
       ) : (
         <form
