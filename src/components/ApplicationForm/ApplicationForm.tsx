@@ -38,7 +38,7 @@ const ApplicationForm = () => {
       attributes: payload,
     };
     try {
-      const res = await updateServerData(payload);
+      const res = await updateServerData(newPayload);
       console.log(res.data);
       return res.data;
     } catch (error) {
