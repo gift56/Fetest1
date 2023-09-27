@@ -136,7 +136,7 @@ const ApplicationForm = () => {
                   className="w-6 h-6"
                 />
                 <div className="flex items-center gap-2">
-                  <span onClick={() => setFieldValue("coverImage", null)}>
+                  <span onClick={() => setFieldValue("coverImage", "")}>
                     Delete{" "}
                   </span>
                   &
