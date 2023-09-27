@@ -61,7 +61,7 @@ const ApplicationForm = () => {
     const file = event.currentTarget.files[0];
     if (file && !file.type.startsWith("image/")) {
       alert("Please select an image file");
-      setFieldValue("school_image", null);
+      setFieldValue("coverImage", null);
       return;
     }
     setFieldValue("coverImage", file.name);
