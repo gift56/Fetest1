@@ -30,7 +30,13 @@ const ApplicationForm = () => {
   }, []);
 
   const onSubmit = async (payload: FormValue, actions: any) => {
-    console.log(payload);
+    try {
+      const res = await updateServerData();
+      console.log(res.data)
+      return res.data
+    } catch (error) {
+      console.log(error);
+    }
     await new Promise((res) => setTimeout(res, 1000));
     actions.resetForm();
   };
