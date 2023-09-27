@@ -24,6 +24,7 @@ const ApplicationForm = () => {
     handleSubmit,
     errors,
     setFieldValue,
+    isSubmitting,
   } = useFormik({
     initialValues,
     validationSchema: validationSchema,
@@ -698,7 +699,7 @@ const ApplicationForm = () => {
           </div>
         </Card>
       </div>
-{/* 
+      {/* 
       <div
         className={`${
           values.customisedQuestions.length === 0
@@ -798,6 +799,12 @@ const ApplicationForm = () => {
           </div>
         </Card>
       </div> */}
+      <CustomizeButton
+        type="submit"
+        text="Submit"
+        disabled={isSubmitting}
+        className="!w-fit bg-success text-white !px-10 !rounded-md"
+      />
     </form>
   );
 };
