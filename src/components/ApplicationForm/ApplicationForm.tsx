@@ -8,7 +8,7 @@ import { generalInitialValues } from "./generalInitialValues";
 import { emptyQuestion, questionType } from "../../utils/constant";
 import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
-import { fetchDataFromServer } from "../../utils/fetch";
+import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(undefined);
