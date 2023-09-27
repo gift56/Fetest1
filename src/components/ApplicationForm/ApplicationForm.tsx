@@ -26,6 +26,7 @@ const ApplicationForm = () => {
         setLoading(false);
       }
     };
+    fetchData();
   }, []);
 
   const initialValues = generalInitialValues;
