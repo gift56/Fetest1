@@ -693,7 +693,7 @@ const ApplicationForm = () => {
                     onClick={() => {
                       const itemToAdd = values.profile.profileQuestions[index];
                       addCustomisedQuestion(itemToAdd);
-                      if (!itemToAdd) {
+                      if (itemToAdd) {
                         removeProfileQuestion(index);
                       }
                     }}
