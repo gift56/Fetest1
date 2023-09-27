@@ -112,7 +112,7 @@ const ApplicationForm = () => {
                     Delete{" "}
                   </span>{" "}
                   &
-                  <label htmlFor="coverImage" className="text-success">
+                  <label htmlFor="coverImage" className="text-success cursor-pointer">
                     re-upload
                   </label>
                 </div>
