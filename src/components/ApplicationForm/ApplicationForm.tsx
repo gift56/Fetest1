@@ -29,8 +29,6 @@ const ApplicationForm = () => {
     fetchData();
   }, []);
 
-  const initialValues = formData || generalInitialValues;
-
   const onSubmit = async (payload: FormValue, actions: any) => {
     console.log(payload);
     await new Promise((res) => setTimeout(res, 1000));
@@ -47,8 +45,9 @@ const ApplicationForm = () => {
     isSubmitting,
     touched,
   } = useFormik({
-    initialValues,
+    initialValues: formData || generalInitialValues,
     validationSchema: validationSchema,
+    enableReinitialize: true,
     onSubmit,
   });
 
@@ -79,7 +78,7 @@ const ApplicationForm = () => {
     setFieldValue("customisedQuestions", [...values.customisedQuestions, item]);
   };
 
-  console.log(values.coverImage);
+  console.log(values);
   console.log(formData);
 
   if (loading) return <p className="p-8">Loading...</p>;
