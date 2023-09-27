@@ -19,7 +19,7 @@ const ApplicationForm = () => {
       setLoading(true);
       try {
         const res = await fetchDataFromServer();
-        setFormData(res?.data?.attributes);
+        setFormData(res?.data?.data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -81,7 +81,7 @@ const ApplicationForm = () => {
 
   console.log(formData);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="p-8">Loading...</p>;
 
   return (
     <form
