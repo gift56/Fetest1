@@ -154,7 +154,6 @@ const ApplicationForm = () => {
               </div>
             </div>
           ) : (
-            // Handle the case when values.coverImage is a Blob
             <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
               <img
                 src={URL.createObjectURL(values.coverImage)}
