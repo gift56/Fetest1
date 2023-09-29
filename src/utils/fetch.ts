@@ -6,7 +6,7 @@ const fetchDataFromServer = async () => {
   return await baseUrl.get(request.requestapplication);
 };
 
-const updateServerData = async (payload: FormValue) => {
+const updateServerData = async (payload: any) => {
   return await baseUrl.put(request.requestapplication, payload);
 };
 

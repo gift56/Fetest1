@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(undefined);
+  const [formDataId, setFormDataId] = useState(undefined);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -22,6 +23,7 @@ const ApplicationForm = () => {
       try {
         const res = await fetchDataFromServer();
         setFormData(res?.data?.data?.attributes);
+        setFormDataId(res?.data?.data?.id);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -32,8 +34,13 @@ const ApplicationForm = () => {
   }, []);
 
   const onSubmit = async (payload: FormValue, actions: any) => {
+    const newPayload = {
+      id: formDataId || "",
+      type: "applicationForm",
+      attributes: payload,
+    };
     try {
-      const res = await updateServerData(payload);
+      const res = await updateServerData(newPayload);
 
       setSuccess(true);
       return res.data;
