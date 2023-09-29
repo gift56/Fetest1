@@ -1,5 +1,4 @@
 import { baseUrl } from "../config";
-import FormValue from "../hooks/type";
 import { request } from "../lib/request";
 
 const fetchDataFromServer = async () => {
