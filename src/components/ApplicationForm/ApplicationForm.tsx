@@ -42,7 +42,6 @@ const ApplicationForm = () => {
     };
     try {
       const res = await updateServerData(newPayload);
-
       setSuccess(true);
       return res.data;
     } catch (error: any) {
