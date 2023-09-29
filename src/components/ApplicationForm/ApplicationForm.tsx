@@ -27,7 +27,7 @@ const ApplicationForm = () => {
         setLoading(false);
       } catch (error) {
         console.log(error);
-        toast.error("Something went wrong");
+        toast.error("Something went wrong while fetching data");
         setLoading(false);
       }
     };
