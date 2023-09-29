@@ -144,7 +144,7 @@ const ApplicationForm = () => {
                 <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
                   <img
                     src={values.coverImage}
-                    alt="Cover Image"
+                    alt="CoverImage"
                     className="w-full h-[300px] object-cover"
                   />
                   <div className="flex items-center justify-center gap-3 text-sm font-semibold text-danger cursor-pointer px-4">
@@ -180,7 +180,7 @@ const ApplicationForm = () => {
                 <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
                   <img
                     src={URL.createObjectURL(values.coverImage)}
-                    alt="uploaded image"
+                    alt="uploadedimage"
                     className="w-full h-[300px] object-cover"
                   />
                   <div className="flex items-center justify-center gap-3 text-sm font-semibold text-danger cursor-pointer px-4">
