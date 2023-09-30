@@ -10,8 +10,6 @@ import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
 import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 import toast from "react-hot-toast";
-import { baseUrl } from "../../config";
-import { request } from "../../lib/request";
 
 const ApplicationForm = () => {
   const [viewImage, setViewImage] = useState("");
@@ -20,21 +18,22 @@ const ApplicationForm = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const res = await fetchDataFromServer();
+      setFormData(res?.data?.data?.attributes);
+      setViewImage(res?.data?.data?.attributes?.coverImage);
+      setFormDataId(res?.data?.data?.id);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong while fetching data");
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await fetchDataFromServer();
-        setFormData(res?.data?.data?.attributes);
-        setViewImage(res?.data?.data?.attributes?.coverImage);
-        setFormDataId(res?.data?.data?.id);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        toast.error("Something went wrong while fetching data");
-        setLoading(false);
-      }
-    };
     fetchData();
   }, []);
 
@@ -74,12 +73,10 @@ const ApplicationForm = () => {
 
   function handleImageChange(event: any) {
     const file = event.currentTarget.files[0];
-    const url = `${request.requestapplication}/${file.name}`
+    const url = `http://127.0.0.1:4010/${file.name}`;
     setFieldValue("coverImage", url);
     setViewImage(file);
   }
-
-  console.log(viewImage);
 
   const addProfileQuestion = () => {
     setFieldValue("profile.profileQuestions", [
@@ -113,7 +110,10 @@ const ApplicationForm = () => {
             family and contributing to its continued success.
           </p>
           <CustomizeButton
-            onClick={() => setSuccess(false)}
+            onClick={async () => {
+              fetchData();
+              setSuccess(false);
+            }}
             type="button"
             text="Send another"
             className="bg-success rounded !px-10 text-white"
@@ -170,7 +170,12 @@ const ApplicationForm = () => {
                       className="w-6 h-6"
                     />
                     <div className="flex items-center gap-2">
-                      <span onClick={() => setFieldValue("coverImage", "")}>
+                      <span
+                        onClick={() => {
+                          setFieldValue("coverImage", "");
+                          setViewImage("");
+                        }}
+                      >
                         Delete{" "}
                       </span>
                       &
