@@ -11,6 +11,7 @@ import CustomizeButton from "../CustomizeButton";
 import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 import toast from "react-hot-toast";
 import { baseUrl } from "../../config";
+import { request } from "../../lib/request";
 
 const ApplicationForm = () => {
   const [viewImage, setViewImage] = useState("");
@@ -73,7 +74,7 @@ const ApplicationForm = () => {
 
   function handleImageChange(event: any) {
     const file = event.currentTarget.files[0];
-    const url = `${baseUrl}/${file.name}`
+    const url = `${request.requestapplication}/${file.name}`
     setFieldValue("coverImage", url);
     setViewImage(file);
   }
