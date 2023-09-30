@@ -10,6 +10,7 @@ import CustomizeSelect from "../formInputs/CustomizeSelect";
 import CustomizeButton from "../CustomizeButton";
 import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 import toast from "react-hot-toast";
+import { baseUrl } from "../../config";
 
 const ApplicationForm = () => {
   const [viewImage, setViewImage] = useState("");
@@ -24,7 +25,7 @@ const ApplicationForm = () => {
       try {
         const res = await fetchDataFromServer();
         setFormData(res?.data?.data?.attributes);
-        setViewImage(res?.data?.data?.coverImage);
+        setViewImage(res?.data?.data?.attributes?.coverImage);
         setFormDataId(res?.data?.data?.id);
         setLoading(false);
       } catch (error) {
@@ -72,9 +73,12 @@ const ApplicationForm = () => {
 
   function handleImageChange(event: any) {
     const file = event.currentTarget.files[0];
-    setFieldValue("coverImage", file.name);
+    const url = `${baseUrl}/${file.name}`
+    setFieldValue("coverImage", url);
     setViewImage(file);
   }
+
+  console.log(viewImage);
 
   const addProfileQuestion = () => {
     setFieldValue("profile.profileQuestions", [
@@ -121,7 +125,7 @@ const ApplicationForm = () => {
         >
           <Card headline="Upload cover image">
             <>
-              {!values.coverImage ? (
+              {!viewImage ? (
                 <label
                   htmlFor="coverImage"
                   className={`w-full border-2 border-black rounded-[5px] flex flex-col gap-2 cursor-pointer hover:bg-basegray/10 transition-all duration-300 items-center justify-center px-3 border-dashed shadow-uploadShad h-[200px] my-2 ${
@@ -151,7 +155,7 @@ const ApplicationForm = () => {
                     className="hidden"
                   />
                 </label>
-              ) : typeof values.coverImage === "string" ? (
+              ) : typeof viewImage === "string" ? (
                 <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
                   <img
                     src={viewImage}
@@ -190,7 +194,7 @@ const ApplicationForm = () => {
               ) : (
                 <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
                   <img
-                    src={URL.createObjectURL(values.coverImage)}
+                    src={URL.createObjectURL(viewImage)}
                     alt="uploadedimage"
                     className="w-full h-[300px] object-cover"
                   />
