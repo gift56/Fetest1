@@ -12,6 +12,7 @@ import { fetchDataFromServer, updateServerData } from "../../utils/fetch";
 import toast from "react-hot-toast";
 
 const ApplicationForm = () => {
+  const [viewImage, setViewImage] = useState("");
   const [formData, setFormData] = useState(undefined);
   const [formDataId, setFormDataId] = useState(undefined);
   const [success, setSuccess] = useState(false);
@@ -23,6 +24,7 @@ const ApplicationForm = () => {
       try {
         const res = await fetchDataFromServer();
         setFormData(res?.data?.data?.attributes);
+        setViewImage(res?.data?.data?.coverImage);
         setFormDataId(res?.data?.data?.id);
         setLoading(false);
       } catch (error) {
@@ -70,7 +72,8 @@ const ApplicationForm = () => {
 
   function handleImageChange(event: any) {
     const file = event.currentTarget.files[0];
-    setFieldValue("coverImage", file);
+    setFieldValue("coverImage", file.name);
+    setViewImage(file);
   }
 
   const addProfileQuestion = () => {
@@ -151,7 +154,7 @@ const ApplicationForm = () => {
               ) : typeof values.coverImage === "string" ? (
                 <div className="w-full rounded-[5px] flex flex-col gap-2 cursor-pointer transition-all duration-300 items-start justify-between shadow-uploadShad overflow-hidden h-[350px] pb-4">
                   <img
-                    src={values.coverImage}
+                    src={viewImage}
                     alt="CoverImage"
                     className="w-full h-[300px] object-cover"
                   />
