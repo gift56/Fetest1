@@ -43,7 +43,7 @@ const ApplicationForm = () => {
     try {
       const res = await updateServerData(newPayload);
       setSuccess(true);
-      toast.error("Submitted successfully");
+      toast.success("Submitted successfully");
       return res.data;
     } catch (error: any) {
       toast.error("Failed to submit request");
