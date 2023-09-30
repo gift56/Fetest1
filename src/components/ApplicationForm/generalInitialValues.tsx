@@ -4,15 +4,15 @@ export const generalInitialValues: FormValue = {
   coverImage: "",
   personalInformation: {
     firstName: {
-      internalUse: false,
+      internalUse: true,
       show: true,
     },
     lastName: {
-      internalUse: false,
+      internalUse: true,
       show: true,
     },
     emailId: {
-      internalUse: false,
+      internalUse: true,
       show: true,
     },
     phoneNumber: {
