@@ -35,14 +35,8 @@ const ApplicationForm = () => {
   }, []);
 
   const onSubmit = async (payload: FormValue, actions: any) => {
-    const newPayload = {
-      id: formDataId || "",
-      type: "applicationForm",
-      attributes: payload,
-    };
-    console.log(payload);
     try {
-      const res = await updateServerData(newPayload);
+      const res = await updateServerData(payload);
       setSuccess(true);
       return res.data;
     } catch (error: any) {
