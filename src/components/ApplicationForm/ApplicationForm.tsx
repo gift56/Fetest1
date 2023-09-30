@@ -35,12 +35,18 @@ const ApplicationForm = () => {
   }, []);
 
   const onSubmit = async (payload: FormValue, actions: any) => {
+    const newPayload = {
+      id: formDataId || "",
+      type: "applicationForm",
+      attributes: payload,
+    };
+    console.log(payload);
     try {
-      const res = await updateServerData(payload);
+      const res = await updateServerData(newPayload);
       setSuccess(true);
       return res.data;
     } catch (error: any) {
-      toast.error(error && error?.message);
+      toast.error("Failed to submit request");
     }
     await new Promise((res) => setTimeout(res, 1000));
     actions.resetForm();
